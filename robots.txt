@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://blucap.github.io/sitemap.xml
