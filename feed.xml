@@ -3,7 +3,7 @@
     <title>My Git</title>
     <link href="https://blucap.github.io/feed.xml" rel="self" />
     <link href="https://blucap.github.io" />
-    <updated>2021-10-08T07:11:16+13:00</updated>
+    <updated>2021-10-08T07:15:02+13:00</updated>
     <author>
         <name>Martien</name>
     </author>
@@ -17,15 +17,15 @@
         <link href="https://blucap.github.io/first-post.html"/>
         <id>https://blucap.github.io/first-post.html</id>
 
-        <updated>2021-10-08T07:11:16+13:00</updated>
+        <updated>2021-10-08T07:15:02+13:00</updated>
             <summary>
                 <![CDATA[
-                    Text here
+                    Text here. See if it works.
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Text here</p>
+                <p>Text here. See if it works.</p>
             ]]>
         </content>
     </entry>
