@@ -1,8 +1,14 @@
 ---
+title: "Accounting"
+subtitle: "\n \n Presentation at VUW for Bethlehem College - 8 July 2022 \n \n Martien  Lubberink"
 format:
   revealjs: 
-    theme: white
-editor: visual
+    slide-number: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    css: styles.css
+    #footer: <https://www.wgtn.ac.nz/>
 ---
 
 ## Accounting
@@ -14,9 +20,7 @@ editor: visual
 The language of business
 
 ::: aside
-Martien Lubberink, Associate professor
-
-Presentation at VUW - Bethlehem College Secondary - 8 July 2022
+Martien Lubberink, Associate Professor of Accounting
 :::
 
 ## Accounting
@@ -30,9 +34,7 @@ The language of business
 The business of language
 
 ::: aside
-Martien Lubberink, Associate professor
-
-Presentation at VUW - Bethlehem College Secondary - 8 July 2022
+Martien Lubberink, Associate Professor of Accounting
 :::
 
 ## Question
@@ -58,7 +60,7 @@ We know that the best decisions are made with the best information available.
 But ...​
 
 -   Sometimes the best information is located at specialist staff lower down in the hierarchy.
--   If important that information should reach the C-suite.
+-   If important, that information should reach the C-suite.
 
 ## An important trade-off​
 
