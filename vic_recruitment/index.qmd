@@ -1,0 +1,152 @@
+---
+format:
+  revealjs: 
+    theme: white
+editor: visual
+---
+
+## Accounting
+
+ 
+
+ 
+
+The language of business
+
+::: aside
+Martien Lubberink, Associate professor
+
+Presentation at VUW - Bethlehem College Secondary - 8 July 2022
+:::
+
+## Accounting
+
+ 
+
+ 
+
+The language of business
+
+The business of language
+
+::: aside
+Martien Lubberink, Associate professor
+
+Presentation at VUW - Bethlehem College Secondary - 8 July 2022
+:::
+
+## Question
+
+ 
+
+How did Uber solve a typical management control problem, and what does it tell us about the importance of accounting?
+
+<p align="center">
+<img src="uber.png" alt="Uber" width="500"/>
+</p>
+
+But before I answer that question, let's talk about speaking up.
+
+## An important trade-off​
+
+We know that the best decisions are made with the best information available.
+
+<p align="center">
+<img src="hierarchy.jpg" alt="Hierarchys" width="300"/>
+</p>
+
+But ...​
+
+-   Sometimes the best information is located at specialist staff lower down in the hierarchy.
+-   If important that information should reach the C-suite.
+
+## An important trade-off​
+
+Suppose you work for a large organisation.
+
+What if your manager is a bossy-boot, strongly focused on meeting targets?
+
+ 
+
+<p align="center">
+<img src="bossy.jpg" alt="Bossy" width="500"/>
+</p>
+
+## An important trade-off​
+
+Suppose you work for a large organisation.
+
+What if your manager is chill, not at all focused on meeting targets?
+
+ 
+
+<p align="center">
+<img src="chill.jpg" alt="Chill" width="500"/>
+</p>
+
+## Recap
+
+-   Too much focus on control
+    -   Poor ...
+-   Too little focus on control
+    -   ...
+
+## Recap
+
+-   Too much focus on control
+    -   Poor decision making
+-   Too little focus on control
+    -   ...
+
+## Recap
+
+-   Too much focus on control
+    -   Poor decision making
+-   Too little focus on control
+    -   Anarchy
+
+## Solving control problems
+
+Accounting to the rescue​
+
+-   How do companies solve these problems?
+    -   What was the problem with traditional taxis?
+
+## 
+
+ 
+
+<p align="center">
+<img src="taxi.png" alt="taxi" width="700"/>
+</p>
+
+## Solving control problems
+
+Accounting to the rescue​
+
+-   How do companies solve these problems?
+
+    -   What was the problem with traditional taxis?
+    -   How did Uber solve that problem?
+
+## Solving control problems in general​
+
+ 
+
+The three legged stool:
+
+-   Matching the right person with the right job
+-   Measuring performance
+-   Rewarding performance
+
+## Solving control problems in general​
+
+ 
+
+The three legged stool:
+
+-   Matching the right person with the right job
+-   Measuring performance
+-   Rewarding performance
+
+Which of the legs did Uber adjust to control the typical taxi problem?
