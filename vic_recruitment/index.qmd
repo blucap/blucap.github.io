@@ -169,7 +169,7 @@ Accounting to the rescue​
     -   What was the problem with traditional taxis and tourists?
     -   How did Uber solve that problem?
 
-## Solving control problems in general​
+## Solving control problems in general
 
  
 
@@ -179,9 +179,7 @@ The three legged stool:
 -   Measuring performance
 -   Rewarding performance
 
-## Solving control problems in general​
-
- 
+## Solving control problems in general
 
 The three legged stool:
 
@@ -190,3 +188,34 @@ The three legged stool:
 -   Rewarding performance
 
 Which of the legs did Uber adjust to control the typical taxi problem?
+
+
+## Solving control problems in general
+
+Matching the right person with the right job
+<p align="center">
+<img src="bojo.jpeg" alt="bojo" width="500"/>
+</p>
+
+## Solving control problems in general
+
+Matching the right person with the right job
+<p align="center">
+<img src="kerviel.jpg" alt="Kerviel" width="500"/>
+</p>
+
+- Jérôme Kerviel: unauthorized trading, defrauded his bank to the tune of 5bn euro.
+- What was special about Jérôme?
+
+## Solving control problems in general
+
+Matching the right person with the right job
+
+For jobs in complex industries:
+
+- Banking and insurance
+- Medical, your GP
+- Engineering, trades
+- Universities
+    
+How can you tell if someone does a good job?
