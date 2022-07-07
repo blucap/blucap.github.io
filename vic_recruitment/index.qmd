@@ -1,6 +1,6 @@
 ---
 title: "Accounting"
-subtitle: "\n \n Presentation at VUW for Bethlehem College - 8 July 2022 \n \n Martien  Lubberink"
+subtitle: "\n \n Presentation at VUW for Bethlehem College \n\n 8 July 2022 \n \n Martien  Lubberink"
 format:
   revealjs: 
     slide-number: false
@@ -80,12 +80,36 @@ What if your manager is a bossy-boot, strongly focused on meeting targets?
 
 Suppose you work for a large organisation.
 
+What if your manager is a bossy-boot, strongly focused on meeting targets?
+
+ 
+
+<p align="center">
+<img src="fine.png" alt="fine" width="500"/>
+</p>
+
+## An important trade-off​
+
+Suppose you work for a large organisation.
+
 What if your manager is chill, not at all focused on meeting targets?
 
  
 
 <p align="center">
 <img src="chill.jpg" alt="Chill" width="500"/>
+</p>
+
+## An important trade-off​
+
+Suppose you work for a large organisation.
+
+What if your manager is chill, not at all focused on meeting targets?
+
+ 
+
+<p align="center">
+<img src="penny.png" alt="Penny" width="500"/>
 </p>
 
 ## Recap
@@ -108,13 +132,23 @@ What if your manager is chill, not at all focused on meeting targets?
     -   Poor decision making
 -   Too little focus on control
     -   Anarchy
+    
+## Problem
+
+\ 
+
+- Every firm has grumpy and chill managers.
+- No firm survives if these managers are left uncontrolled.
 
 ## Solving control problems
+
+\ 
 
 Accounting to the rescue​
 
 -   How do companies solve these problems?
-    -   What was the problem with traditional taxis?
+
+    -   What was the problem with traditional taxis and tourists?
 
 ## 
 
@@ -126,11 +160,13 @@ Accounting to the rescue​
 
 ## Solving control problems
 
+\ 
+
 Accounting to the rescue​
 
 -   How do companies solve these problems?
 
-    -   What was the problem with traditional taxis?
+    -   What was the problem with traditional taxis and tourists?
     -   How did Uber solve that problem?
 
 ## Solving control problems in general​
