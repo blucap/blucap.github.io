@@ -1,0 +1,88 @@
+---
+title: "WWGC Financials"
+subtitle: "\n \n Presentation Wellington Wairarapa Gliding Club \n\n 8 August 2022 \n \n Martien  Lubberink"
+format:
+  revealjs: 
+    slide-number: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    #logo: logo-white-full.svg
+    #theme: dark
+    css: styles.css
+    #footer: <https://www.wgtn.ac.nz/>
+---
+
+## Wellington Wairarapa Gliding Club
+
+ 
+
+Using glidingops and Python I made some graphs
+
+::: aside
+Martien Lubberink
+:::
+
+## First launch of the day
+
+ 
+
+<p align="center">
+<img src="takeofftimedots.png" alt="Wakey" width="600"/>
+</p>
+
+## Launches during the day
+
+ 
+
+<p align="center">
+<img src="takeoff_time_histo.png" alt="Wakey" width="700"/>
+</p>
+
+## Flights by month
+
+ 
+
+<p align="center">
+<img src="flights_months_of_the_year.png" alt="Wakey" width="600"/>
+</p>
+
+## Flights by month - tracking
+
+ 
+
+<p align="center">
+<img src="tracking.png" alt="Wakey" width="600"/>
+</p>
+
+## Fees by pilot type
+
+ 
+
+<p align="center">
+<img src="fees_paid_by_type.png" alt="Wakey" width="800"/>
+</p>
+
+## Fees concentration
+
+| Year | Billed             |
+|-----:|:-------------------|
+| 1 | Katrina  |
+| 2 | Martin    |
+| 3 | Bruno  |
+| 4 | Mike        |
+| 5 | Paul       |
+| 6 | Tom           |
+| 7 | Alistar     |
+
+## Fees concentration
+
+| Year | Billed             |
+|-----:|:-------------------|
+| 1 | Katrina  |
+| 2 | Martien   |
+| 3 | Reegan         |
+| 4 | Martin       |
+| 5 | Harvey     |
+| 6 | Taylor        |
+| 7 | Alistar     |
