@@ -63,9 +63,9 @@ Martien Lubberink
 <img src="fees_paid_by_type.png" alt="Wakey" width="800"/>
 </p>
 
-## Fees concentration
+## Fees concentration 
 
-| Year | Billed             |
+| 2021 | Billed             |
 |-----:|:-------------------|
 | 1 | Katrina  |
 | 2 | Martin    |
@@ -77,7 +77,7 @@ Martien Lubberink
 
 ## Fees concentration
 
-| Year | Billed             |
+| 2022 | Billed             |
 |-----:|:-------------------|
 | 1 | Katrina  |
 | 2 | Martien   |
