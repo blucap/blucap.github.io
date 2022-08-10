@@ -66,26 +66,33 @@ Time (hour of the day) measured in decimals.
 <img src="fees_paid_by_type.png" alt="Wakey" width="800"/>
 </p>
 
-## Fees concentration 
+## Fees concentration  
 
-| 2021 | Billed             |
-|-----:|:-------------------|
-| 1 | Katrina  |
-| 2 | Martin    |
-| 3 | Bruno  |
-| 4 | Mike        |
-| 5 | Paul       |
-| 6 | Tom           |
-| 7 | Alistar     |
+Top 7 revenue generators
+
+|   2021 |              |
+|--------|--------------------|
+|      1 | Stew Darling       |
+|      2 | Katrina Merrifield |
+|      3 | Allan Johnson      |
+|      4 | Alistar Grocott    |
+|      5 | Nick Johns         |
+|      6 | Paul Williams      |
+|      7 | Mike Lennard       |
+
+
+
 
 ## Fees concentration
 
-| 2022 | Billed             |
-|-----:|:-------------------|
-| 1 | Katrina  |
-| 2 | Martien   |
-| 3 | Reegan         |
-| 4 | Martin       |
-| 5 | Harvey     |
-| 6 | Taylor        |
-| 7 | Alistar     |
+Top 7 revenue generators
+
+|   2022 |              |
+|--------|--------------------|
+|      1 | Katrina Merrifield |
+|      2 | Martien Lubberink  |
+|      3 | Martin Forest      |
+|      4 | Reegan Tock        |
+|      5 | Martin Moncrieff   |
+|      6 | Paul Williams      |
+|      7 | Harvey Frizzell    |
