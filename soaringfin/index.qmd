@@ -28,8 +28,9 @@ Martien Lubberink
  
 
 <p align="center">
-<img src="takeofftimedots.png" alt="Wakey" width="600"/>
+<img src="takeofftimedots.png" alt="Wakey" width="500"/>
 </p>
+Time (hour of the day) measured in decimals.
 
 ## Launches during the day
 
@@ -38,6 +39,8 @@ Martien Lubberink
 <p align="center">
 <img src="takeoff_time_histo.png" alt="Wakey" width="700"/>
 </p>
+
+
 
 ## Flights by month
 
