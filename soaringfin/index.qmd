@@ -52,11 +52,12 @@ Time (hour of the day) measured in decimals.
 
 ## Flights by month - tracking
 
- 
 
 <p align="center">
 <img src="tracking.png" alt="Wakey" width="600"/>
 </p>
+
+Time in weeks, starting July ending June
 
 ## Fees by pilot type
 
