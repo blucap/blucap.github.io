@@ -74,16 +74,16 @@ Pillar 1: a potent tool, often leading to tensions between Basel member states.
 -   For example, after the GFC, minimum capital requirements changed:
 
     -   Basel II requirements:
-        -   Tier 1 + Tier 2 $\geq$ 8.00 percent
+        -   Tier 1 + Tier 2 $\geq$ 8.00%
     -   Basel III requirements:
-        -   Common Equity Tier 1 $\geq$ 4.50 percent
-        -   Additional Tier 1 $\geq$ 8.00 percent
-        -   Tier 2 $\geq$ 2.00 percent
-        
-::: {.incremental}
+        -   [Common Equity Tier 1 $\geq$ 4.50%]{.fragment .highlight-red}
+        -   Additional Tier 1 $\geq$ 1.50%
+        -   Tier 2 $\geq$ 2.00%
+        -   Various buffers depending on resilience ($\leq$ 2.50%), size or systemically importance ($\leq$ 5.00%) , credit growth ($\leq$ 2.50%).
+
+::: incremental
 -   Why the 4.50 percent?
 :::
-
 
 ## Minimum Capital Requirements {.smaller}
 
@@ -98,7 +98,6 @@ Another example: The [Basel III](https://www.bis.org/publ/bcbs189.pdf) definitio
 ::: {.fragment .highlight-red}
 Why that long footnote #12?
 :::
-
 :::
 
 ::: {.column width="50%"}
@@ -136,9 +135,9 @@ Who calls the shots? See BCBS membership distribution below:
 
 ## Minimum Capital Requirements {.smaller}
 
-In this context and with banks building capital after COVID19, no surprise re the use of the most powerful tool.  
+In this context and with banks building capital after COVID19, no surprise re the use of the most powerful tool.
 
-- The Basel committee on 15 September [mentioned](https://www.bis.org/press/p220915.htm) re climate: "[Discuss ongoing work related to measures to address climate-related financial risks.]{.fragment .highlight-red}"
+-   The Basel committee on 15 September [mentioned](https://www.bis.org/press/p220915.htm) re climate: "[Discuss ongoing work related to measures to address climate-related financial risks.]{.fragment .highlight-red}"
 
 and, referring to the [GHOS](https://www.bis.org/press/p220913.htm)
 
@@ -146,26 +145,23 @@ and, referring to the [GHOS](https://www.bis.org/press/p220913.htm)
 -   On [climate]{.fragment .highlight-red}, GHOS members reaffirmed the scope of the Committee's work -- and endorsed the Committee's [holistic approach]{.fragment .highlight-red} to developing and assessing potential measures related to disclosure, supervision and/or regulation.
 -   On [cryptoassets]{.fragment .highlight-red}, members reiterated the importance of designing a robust and prudent regulatory framework for banks' exposures to cryptoassets that promotes responsible innovation while preserving financial stability. [The GHOS tasked the Committee with finalising such a framework around the end of this year.]{.fragment .highlight-red}
 
+## Minimum Capital Requirements {.smaller}
+
+Positions confirming a wait-and-see approach on use of Capital Requirements:
+
+-   The Federal Reserve:
+    -   "We are also working to understand financial risks related to climate change. At the Federal Reserve, [our mandate in this area is important, but narrow]{.fragment .highlight-red}, and we are focused on our supervisory responsibilities and our role in promoting a safe and stable financial system." ([Michael S. Barr](https://www.federalreserve.gov/newsevents/testimony/files/barr20221115a.pdf), Vice Chair for Supervision, Board of Governors of the Federal Reserve System, 15 November, 2022)
+-   The Bank of England
+    -   "We find that [regulatory capital is not the right tool]{.fragment .highlight-red} to address the causes of climate change (greenhouse gas emissions), but should have a role in dealing with its consequences (financial risks). ... [the PRA already expects firms to capture and capitalise for climate-related financial risks where they are material, using current capital frameworks.]{.fragment .highlight-blue}" ([Sam Wood](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/publication/2021/october/climate-change-adaptation-report-2021.pdf?la=en&hash=FF4A0C618471462E10BC704D4AA58727EC8F8720), CEO of the PRA and Deputy Governor for Prudential Regulation, Bank of England, 28 October 2021)
 
 ## Minimum Capital Requirements {.smaller}
 
 Positions confirming a wait-and-see approach on use of Capital Requirements:
 
--   The Federal Reserve: 
-    - "We are also working to understand financial risks related to climate change. At the Federal Reserve, [our mandate in this area is important, but narrow]{.fragment .highlight-red}, and we are focused on our supervisory responsibilities and our role in promoting a safe and stable financial system." ([Michael S. Barr](https://www.federalreserve.gov/newsevents/testimony/files/barr20221115a.pdf), Vice Chair for Supervision, Board of Governors of the Federal Reserve System, 15 November, 2022)
--   The Bank of England 
-    - "We find that [regulatory capital is not the right tool]{.fragment .highlight-red} to address the causes of climate change (greenhouse gas emissions), but should have a role in dealing with its consequences (financial risks). ... [the PRA already expects firms to capture and capitalise for climate-related financial risks where they are material, using current capital frameworks.]{.fragment .highlight-blue}" ([Sam Wood](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/publication/2021/october/climate-change-adaptation-report-2021.pdf?la=en&hash=FF4A0C618471462E10BC704D4AA58727EC8F8720), CEO of the PRA and Deputy Governor for Prudential Regulation, Bank of England, 28 October 2021)
-
-## Minimum Capital Requirements {.smaller}
-
-Positions confirming a wait-and-see approach on use of Capital Requirements:
-
--   The ECB: 
-    - "While the ECB and other central banks and supervisors from around the world are [not in the driver's seat to implement climate policies]{.fragment .highlight-red}, they should play an important role to address climate change within their mandates, rigorous analysis being a key tool." ([ECB blog](https://www.ecb.europa.eu/press/blog/date/2022/html/ecb.blog221118~e416e71aba.en.html) 18 November 2022.)
-    
-- The RBNZ
-    - Our focus for 2021 and 2022 includes integrating climate change considerations more deeply within our organisation. For example, we are intensifying our supervision of climate-related risks and [working to increase our understanding of climate-related risks to financial stability]{.fragment .highlight-red}.
-
+-   The ECB:
+    -   "While the ECB and other central banks and supervisors from around the world are [not in the driver's seat to implement climate policies]{.fragment .highlight-red}, they should play an important role to address climate change within their mandates, rigorous analysis being a key tool." ([ECB blog](https://www.ecb.europa.eu/press/blog/date/2022/html/ecb.blog221118~e416e71aba.en.html) 18 November 2022.)
+-   The RBNZ
+    -   Our focus for 2021 and 2022 includes integrating climate change considerations more deeply within our organisation. For example, we are intensifying our supervision of climate-related risks and [working to increase our understanding of climate-related risks to financial stability]{.fragment .highlight-red}.
 
 ## Looks like ... {.smaller}
 
@@ -185,7 +181,7 @@ Positions confirming a wait-and-see approach on use of Capital Requirements:
 :::
 :::
 
-## Not really, there is hope {.smaller}
+## Well actually, there is hope {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
@@ -193,7 +189,7 @@ Positions confirming a wait-and-see approach on use of Capital Requirements:
 
 <p align="right">
 
-<img src="lost.png" alt="Lost" width="300"/>
+
 
 </p>
 :::
@@ -218,7 +214,7 @@ central banks and prudential supervisors rely on other tools, or they outsource 
     -   See [Rabobank this year](https://media.rabobank.com/m/40a724896dac5e0a/original/Interim-Report-2022-EN.pdf): "The share of stage 2 exposures increased to 8.4%, on June 30, 2022, due to the classification of some sectors as vulnerable ... and after the Dutch government published its nitrogen policy approach."
 -   ISSB
     -   "The Basel Committee welcomes the IFRS Foundation's establishment of the International Sustainability Standards Board"
-    
+
 ## Re other tools: Climate Stress Testing {.smaller}
 
 ::: columns
@@ -245,7 +241,7 @@ central banks and prudential supervisors rely on other tools, or they outsource 
 
 ## Re other tools: Pillar 2 {.smaller}
 
--   Europe is in the lead regarding other prudential tools, such as Pillar 2: the Supervisory Review Process (SREP). 
+-   Europe is in the lead regarding other prudential tools, such as Pillar 2: the Supervisory Review Process (SREP).
 
 -   Supervisors use the SREP to make banks deal with risks not covered in Pillar 1.
 
@@ -257,14 +253,13 @@ central banks and prudential supervisors rely on other tools, or they outsource 
 
 ## Pillar 2 {.smaller}
 
-The ECB has also communicated expectations to banks. 
+The ECB has also communicated expectations to banks.
 
-- These should, by end of 2024:
+-   These should, by end of 2024:
     1.  Adequately categorise climate and environmental risks and to conduct a full assessment of their impact on the banks' activities by March 2023 at the latest.
     2.  At the latest by the end of 2023, include climate and environmental risks in their governance, strategy and risk management. [A wait-and-see approach still prevails in most banks.]{.underline}
     3.  By the end of 2024 meet all remaining supervisory expectations on climate and environmental risks outlined in 2020, including full integration in the Internal Capital Adequacy Assessment Process (ICAAP) and stress testing.
-
--   However, these initiative do not necessarily affect bank capital. 
+-   However, these initiative do not necessarily affect bank capital.
 -   For good reasons.
 
 ## Pillar 2 {.smaller}
@@ -279,9 +274,9 @@ Banks' [headroom](https://www.sciencedirect.com/science/article/abs/pii/S1057521
 
 ## Pillar 2 {.smaller}
 
-And yet, despite promises to be careful with Pillar 2 add-ons and the prudential consequences of crowding out headroom, the ECB recently punished banks for poor behaviour: 
+And yet, despite promises to be careful with Pillar 2 add-ons and the prudential consequences of crowding out headroom, the ECB recently punished banks for poor behaviour:
 
-- "for a small number of institutions, the outcome of the 2022 supervisory exercises on C&E risks had an impact on their SREP scores. These in turn, have an impact on their Pillar 2 capital requirements." ([ECB, Walking the Talk, November 2022](https://www.bankingsupervision.europa.eu/press/pr/date/2022/html/ssm.pr221102~2f7070c567.en.html))
+-   "for a small number of institutions, the outcome of the 2022 supervisory exercises on C&E risks had an impact on their SREP scores. These in turn, have an impact on their Pillar 2 capital requirements." ([ECB, Walking the Talk, November 2022](https://www.bankingsupervision.europa.eu/press/pr/date/2022/html/ssm.pr221102~2f7070c567.en.html))
 
 <p align="left">
 
@@ -289,20 +284,16 @@ And yet, despite promises to be careful with Pillar 2 add-ons and the prudential
 
 </p>
 
-In other words, the ECB is ... 
+In other words, the ECB is ...
 
 ## Pillar 2 {.smaller}
 
-
 ::: columns
 ::: {.column width="50%"}
-
-Not sure if the ECB has a reason to moan:  "A wait-and-see approach still prevails in most banks."
-
+Not sure if the ECB has a reason to moan: "A wait-and-see approach still prevails in most banks."
 :::
 
 ::: {.column width="50%"}
-
 <p align="left">
 
 <img src="whatabout.png" alt="dotplot" width="400"/>
@@ -311,35 +302,27 @@ Not sure if the ECB has a reason to moan:  "A wait-and-see approach still prevai
 :::
 :::
 
-
-
 ## Pillar 2 {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
-
-
-- Another complaint from the recent ECB climate stress test: "[Physical risk is generally considered very narrowly, with a focus on the impact of floods and droughts on credit risk.]{.fragment .highlight-red}"
-- But note the picture from an earlier [ECB climate stress test document](https://www.ecb.europa.eu/press/blog/date/2021/html/ecb.blog210318~3bbc68ffc5.en.html):
-- And the picture below from [2022 climate stress test presentation slides](https://www.bankingsupervision.europa.eu/ecb/pub/pdf/annex/ssm.pr220708_annex1.en.pdf):
-
+-   Another complaint from the recent ECB climate stress test: "[Physical risk is generally considered very narrowly, with a focus on the impact of floods and droughts on credit risk.]{.fragment .highlight-red}"
+-   But note the picture from an earlier [ECB climate stress test document](https://www.ecb.europa.eu/press/blog/date/2021/html/ecb.blog210318~3bbc68ffc5.en.html):
+-   And the picture below from [2022 climate stress test presentation slides](https://www.bankingsupervision.europa.eu/ecb/pub/pdf/annex/ssm.pr220708_annex1.en.pdf):
 
 <p align="left">
 
-<img src="whatabout2.png" alt="247" width="430"/>
+<img src="whatabout2.png" alt="247" width="445"/>
 
 </p>
-
 :::
 
 ::: {.column width="50%"}
-
 <p align="left">
 
 <img src="ecb.blog210318.en_img1.png" alt="247" width="600"/>
 
 </p>
-
 :::
 :::
 
@@ -347,9 +330,8 @@ Not sure if the ECB has a reason to moan:  "A wait-and-see approach still prevai
 
 Bank of England on the use of Pillar 2:
 
-- Currently, firms should capture material climate-related financial risks if they are exposed to these risks and they are not (fully) captured in Pillar 1.
-- Moreover, the PRA buffer is designed to reflect risks that firms become exposed to in the future over a three to five year time horizon under a severe but plausible stress.
-
+-   Currently, firms should capture material climate-related financial risks if they are exposed to these risks and they are not (fully) captured in Pillar 1.
+-   Moreover, the PRA buffer is designed to reflect risks that firms become exposed to in the future over a three to five year time horizon under a severe but plausible stress.
 
 ## Lastly: Pillar 3 disclosures {.smaller}
 
@@ -384,12 +366,12 @@ The EU in particular relies on disclosures
 ## Wrapping up {.smaller}
 
 -   Pillar 1: Minimum Capital Requirements - most powerful tool
-    - But untouchable for now. ECB's Andrea Enria: "I don't think we are still talking about the Pillar 1 requirements at the moment"
+    -   But untouchable for now. ECB's Andrea Enria: "I don't think we are still talking about the Pillar 1 requirements at the moment"
 -   Pillar 2: Supervisory Review Process
-    - Bank supervisors appear to hold back, unless Pillar 2 used for covering material climate-related financial risks (BOE), while ECB appears to use Pillar 2 to discipline. 
+    -   Bank supervisors appear to hold back, unless Pillar 2 used for covering material climate-related financial risks (BOE), while ECB appears to use Pillar 2 to discipline.
 -   Pillar 3: Disclosures - most popular, but "You cannot talk yourself out of st you acted yourself into."
 
-On C&E risks, it appears as though there is a shift in the balance: favouring of disclosures. 
+On C&E risks, it appears as though there is a shift in the balance: favouring of disclosures.
 
 However, the G20 last week: "We welcome the report by the FSB and the Network for Greening the Financial System (NGFS) on climate-scenario analysis by jurisdictions."
 
