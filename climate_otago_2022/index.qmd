@@ -51,7 +51,7 @@ The Basel way of regulating bank supervision:
 -   Pillar 2: Supervisory Review Process
 -   Pillar 3: Disclosures
 
-But note, the data used by supervisors originates from the accounts: accounting standards are important as well.
+But note, the data used by supervisors originates from the accounts: accounting standards are important indeed.
 :::
 
 ::: {.column width="40%"}
@@ -77,8 +77,8 @@ Pillar 1: a potent tool, often leading to tensions between Basel member states.
         -   Tier 1 + Tier 2 $\geq$ 8.00%
     -   Basel III requirements:
         -   [Common Equity Tier 1 $\geq$ 4.50%]{.fragment .highlight-red}
-        -   Additional Tier 1 $\geq$ 1.50%
-        -   Tier 2 $\geq$ 2.00%
+        -   Tier 1 $\geq$ 6.00%
+        -   Total Capital $\geq$ 8.00%
         -   Various buffers depending on resilience ($\leq$ 2.50%), size or systemically importance ($\leq$ 5.00%) , credit growth ($\leq$ 2.50%).
 
 ::: incremental
@@ -226,7 +226,7 @@ central banks and prudential supervisors rely on other tools, or they outsource 
         -   Total assets of UK banks are about £15tn.
         -   "[This exercise will not be used to set capital requirements related to climate risk.]{.fragment .highlight-red}"
     -   [ECB 2022 climate risk stress test](https://www.bankingsupervision.europa.eu/press/pr/date/2022/html/ssm.pr220708~565c38d18a.en.html)
-        -   Projecting banks reported €70bn of aggregate losses (on a sum of €22tn of assets).
+        -   Projecting banks reported €70bn of aggregate losses (on a sum of €25tn of assets).
         -   "[It is not a capital adequacy exercise.]{.fragment .highlight-red}"
 :::
 
@@ -276,7 +276,7 @@ Banks' [headroom](https://www.sciencedirect.com/science/article/abs/pii/S1057521
 
 And yet, despite promises to be careful with Pillar 2 add-ons and the prudential consequences of crowding out headroom, the ECB recently punished banks for poor behaviour:
 
--   "for a small number of institutions, the outcome of the 2022 supervisory exercises on C&E risks had an impact on their SREP scores. These in turn, have an impact on their Pillar 2 capital requirements." ([ECB, Walking the Talk, November 2022](https://www.bankingsupervision.europa.eu/press/pr/date/2022/html/ssm.pr221102~2f7070c567.en.html))
+-   "for a small number of institutions, the outcome of the 2022 supervisory exercises on C&E risks had an impact on their SREP scores. [These in turn, have an impact on their Pillar 2 capital requirements]{.fragment .highlight-red}." ([ECB, Walking the Talk, November 2022](https://www.bankingsupervision.europa.eu/press/pr/date/2022/html/ssm.pr221102~2f7070c567.en.html))
 
 <p align="left">
 
