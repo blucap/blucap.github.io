@@ -8,7 +8,7 @@ format:
       buttons: false
     preview-links: auto
     logo: logo-white-full.svg
-    theme: dark
+    #theme: dark
     css: styles.css
     #footer: <https://www.wgtn.ac.nz/>
 ---
