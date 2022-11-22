@@ -1,0 +1,69 @@
+---
+title: "Climate trailblazer or opportunistic profiteer"
+subtitle: "The role of bank branches as a channel for funding green renovation \n\n 25 November 2022 \n\n Discussion \n\n Martien Lubberink"
+bibliography: library.bib
+format:
+  revealjs: 
+    slide-number: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: logo-white-full.svg
+    #theme: dark
+    css: styles.css
+    #footer: <https://www.wgtn.ac.nz/>
+---
+
+## What the paper finds ... {.smaller}
+
+ 
+
+ 
+
+::: columns
+::: {.column width="50%"}
+ 
+
+$PV = f(\text{Bank Presence})$
+:::
+
+::: {.column width="50%"}
+ 
+
+However, this relation varies across the different types of banks and is particularly pronounced for locally rooted banks with a mandate to promote the regional economy.
+:::
+:::
+
+## Great paper {.smaller}
+
+::: columns
+::: {.column width="60%"}
+ 
+
+What I like
+
+-   Interesting results.
+-   Data used.
+-   Results are sensible, novel.
+
+I missed effects of
+
+-   locals pressuring banks to adjust lending standards [see @Vins2008; @CalomirisHaber2014].
+-   geography (hills) and meteorology. Will demand for PV be the same in all parts of Germany?
+:::
+
+::: {.column width="40%"}
+ 
+
+<p align="right">
+
+<img src="C3S_ESOTC18_Spotlighton_sunshineduration_Fig1_branded.png" alt="sunshine" width="800"/>
+
+</p>
+:::
+:::
+
+## References
+
+::: {#refs}
+:::
