@@ -49,7 +49,7 @@ The Basel way of regulating bank supervision:
 
 -   Pillar 1: Minimum Capital Requirements
 -   Pillar 2: Supervisory Review Process
--   Pillar 3: Disclosures
+-   Pillar 3: Disclosures, Market Discipline
 
 But note, the data used by supervisors originates from the accounts: accounting standards are important indeed.
 :::
@@ -69,15 +69,16 @@ But note, the data used by supervisors originates from the accounts: accounting 
 
  
 
-Pillar 1: a potent tool, often leading to tensions between Basel member states.
+**Pillar 1**: the most powerful tool, often leading to tensions between Basel member states.
 
 -   For example, after the GFC, minimum capital requirements changed:
 
-    -   Basel II requirements:
-        -   Tier 1 + Tier 2 $\geq$ 8.00%
-    -   Basel III requirements:
+    -   Basel II requirements, percentage of RWA:
+        -   Tier 1 + Tier 2 $\geq$ 8.00% i.e.
+        -   Total Capital $\geq$ 8.00%
+    -   Basel III requirements, percentage of RWA:
         -   [Common Equity Tier 1 $\geq$ 4.50%]{.fragment .highlight-red}
-        -   Tier 1 $\geq$ 6.00%
+        -   Additional Tier 1 $\geq$ 1.50% and Tier 2 $\geq$ 2.00%
         -   Total Capital $\geq$ 8.00%
         -   Various buffers depending on resilience ($\leq$ 2.50%), size or systemically importance ($\leq$ 5.00%) , credit growth ($\leq$ 2.50%).
 
@@ -189,8 +190,6 @@ Positions confirming a wait-and-see approach on use of Capital Requirements:
 
 <p align="right">
 
-
-
 </p>
 :::
 
@@ -259,7 +258,7 @@ The ECB has also communicated expectations to banks.
     1.  Adequately categorise climate and environmental risks and to conduct a full assessment of their impact on the banks' activities by March 2023 at the latest.
     2.  At the latest by the end of 2023, include climate and environmental risks in their governance, strategy and risk management. [A wait-and-see approach still prevails in most banks.]{.underline}
     3.  By the end of 2024 meet all remaining supervisory expectations on climate and environmental risks outlined in 2020, including full integration in the Internal Capital Adequacy Assessment Process (ICAAP) and stress testing.
--   However, these initiative do not necessarily affect bank capital.
+-   However, these initiatives do not necessarily affect bank capital.
 -   For good reasons.
 
 ## Pillar 2 {.smaller}
@@ -271,6 +270,20 @@ Banks' [headroom](https://www.sciencedirect.com/science/article/abs/pii/S1057521
 <img src="srep_ecb_dots_2019.png" alt="dotplot" width="900"/>
 
 </p>
+
+## Pillar 2 {.smaller}
+
+Investors worried that banks are asked to do the job of lawmakers afraid to take decisions themselves. 
+
+[Jérôme Legras in the FT yesterday](https://www.ft.com/content/627f409a-bf61-4290-9573-fd6bcebc6fc6).
+
+
+<p align="left">
+
+<img src="legras.png" alt="Legras" width="900"/>
+
+</p>
+
 
 ## Pillar 2 {.smaller}
 
@@ -376,3 +389,20 @@ On C&E risks, it appears as though there is a shift in the balance: favouring of
 However, the G20 last week: "We welcome the report by the FSB and the Network for Greening the Financial System (NGFS) on climate-scenario analysis by jurisdictions."
 
 So, no outright global support for changing the balance between supervisors and accounting standard-setters in the design of climate risk disclosures.
+
+
+## ECB Expectations {.smaller}
+
+<p align="left">
+
+<img src="expectations_1.png" alt="ECB expectations" width="450"/>
+
+</p>
+
+## ECB Expectations {.smaller}
+
+<p align="left">
+
+<img src="expectations_2.png" alt="ECB expectations" width="450"/>
+
+</p>
