@@ -56,8 +56,9 @@ Brief comments
 -   Why do borrowers pay 2.56 percent, while KfW charges 76 bp?
 -   Do locals pressure banks to adjust lending standards [see @Vins2008; @CalomirisHaber2014].
 -   Re policy recommendations: government can get it wrong, while there seems to be a functioning (albeit imperfectly) market.  
--   Lastly, as an aside: will demand for PV be the same in all parts of Germany?
 -   Title mentions "opportunism"
+-   Lastly, as an aside: will demand for PV be the same in all parts of Germany?
+
 :::
 
 ::: {.column width="25%"}
