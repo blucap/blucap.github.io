@@ -1,6 +1,9 @@
 ---
 title: "Climate Change Funding"
-subtitle: "The Role of Banks and Central Banks \n\n 25 November 2022 \n\n Martien Lubberink"
+subtitle: "The Role of Banks and Central Banks"
+author: "Martien Lubberink" 
+date: 2022-11-25
+date-format: DD MMMM YYYY
 format:
   revealjs: 
     slide-number: false

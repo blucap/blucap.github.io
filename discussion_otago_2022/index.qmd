@@ -1,6 +1,9 @@
 ---
 title: "Climate trailblazer or opportunistic profiteer"
-subtitle: "The role of bank branches as a channel for funding green renovation \n\n by Max Grossmann and Thomas Pauls \n\n Discussion \n\n Martien Lubberink"
+subtitle: "The role of bank branches as a channel for funding green renovation by Max Grossmann and Thomas Pauls"
+date: 2022-11-25
+date-format: DD MMMM YYYY
+author: "Discussion by Martien Lubberink"
 bibliography: library.bib
 format:
   revealjs: 
