@@ -7,8 +7,10 @@
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.37">
+  <meta name="generator" content="quarto-1.2.269">
 
+  <meta name="author" content="Martien Lubberink">
+  <meta name="dcterms.date" content="2022-12-13">
   <title>WWGC Financials</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,10 +20,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="styles.css">
@@ -320,13 +327,20 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="center">
+<section id="title-slide" class="quarto-title-block center">
   <h1 class="title">WWGC Financials</h1>
-  <p class="subtitle"></p><p>Presentation Wellington Wairarapa Gliding Club</p>
-<p>8 August 2022</p>
-Martien Lubberink<p></p>
-</section>
+  <p class="subtitle">Wellington Wairarapa Gliding Club</p>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Martien Lubberink 
+</div>
+</div>
+</div>
+
+  <p class="date">13 December 2022</p>
+</section>
 <section id="wellington-wairarapa-gliding-club" class="slide level2">
 <h2>Wellington Wairarapa Gliding Club</h2>
 <p>&nbsp;</p>
@@ -335,125 +349,47 @@ Martien Lubberink<p></p>
 <aside><div>
 <p>Martien Lubberink</p>
 </div></aside></section>
-<section id="first-launch-of-the-day" class="slide level2">
-<h2>First launch of the day</h2>
-<p>&nbsp;</p>
-<p align="center">
-<img src="takeofftimedots.png" alt="Wakey" width="500">
-</p>
-<p>Time (hour of the day) measured in decimals.</p>
-</section>
-<section id="launches-during-the-day" class="slide level2">
-<h2>Launches during the day</h2>
-<p>&nbsp;</p>
-<p align="center">
-<img src="takeoff_time_histo.png" alt="Wakey" width="700">
-</p>
-</section>
-<section id="flights-by-month" class="slide level2">
-<h2>Flights by month</h2>
-<p>&nbsp;</p>
-<p align="center">
-<img src="flights_months_of_the_year.png" alt="Wakey" width="600">
-</p>
-</section>
 <section id="flights-by-month---tracking" class="slide level2">
 <h2>Flights by month - tracking</h2>
 <p align="center">
-<img src="tracking.png" alt="Wakey" width="600">
+<img src="counts_all.png" alt="counts" width="600">
 </p>
 <p>Time in weeks, starting July ending June</p>
 </section>
-<section id="fees-by-pilot-type" class="slide level2">
-<h2>Fees by pilot type</h2>
-<p>&nbsp;</p>
+<section id="flights-by-month---tracking-1" class="slide level2">
+<h2>Flights by month - tracking</h2>
 <p align="center">
-<img src="fees_paid_by_type.png" alt="Wakey" width="800">
+<img src="hours_all.png" alt="counts" width="600">
 </p>
+<p>Time in weeks, starting July ending June</p>
 </section>
-<section id="fees-concentration" class="slide level2">
-<h2>Fees concentration</h2>
-<p>Top 7 revenue generators</p>
-<table>
-<thead>
-<tr class="header">
-<th>2021</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Stew Darling</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Katrina Merrifield</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Allan Johnson</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Alistar Grocott</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Nick Johns</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Paul Williams</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Mike Lennard</td>
-</tr>
-</tbody>
-</table>
+<section id="flights-by-month---tracking-2" class="slide level2">
+<h2>Flights by month - tracking</h2>
+<p align="center">
+<img src="counts_private.png" alt="counts" width="600">
+</p>
+<p>Time in weeks, starting July ending June</p>
 </section>
-<section id="fees-concentration-1" class="slide level2">
-<h2>Fees concentration</h2>
-<p>Top 7 revenue generators</p>
-<table>
-<thead>
-<tr class="header">
-<th>2022</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Katrina Merrifield</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Martien Lubberink</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Martin Forest</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Reegan Tock</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Martin Moncrieff</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Paul Williams</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Harvey Frizzell</td>
-</tr>
-</tbody>
-</table>
+<section id="flights-by-month---tracking-3" class="slide level2">
+<h2>Flights by month - tracking</h2>
+<p align="center">
+<img src="hours_private.png" alt="counts" width="600">
+</p>
+<p>Time in weeks, starting July ending June</p>
+</section>
+<section id="flights-by-month---tracking-4" class="slide level2">
+<h2>Flights by month - tracking</h2>
+<p align="center">
+<img src="counts_club.png" alt="counts" width="600">
+</p>
+<p>Time in weeks, starting July ending June</p>
+</section>
+<section id="flights-by-month---tracking-5" class="slide level2">
+<h2>Flights by month - tracking</h2>
+<p align="center">
+<img src="hours_club.png" alt="counts" width="600">
+</p>
+<p>Time in weeks, starting July ending June</p>
 <div class="footer footer-default">
 
 </div>
@@ -709,7 +645,24 @@ Martien Lubberink<p></p>
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -739,31 +692,50 @@ Martien Lubberink<p></p>
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>
