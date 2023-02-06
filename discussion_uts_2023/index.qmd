@@ -1,0 +1,81 @@
+---
+title: "TruPS, I Did It Again"
+subtitle: "The Impact of Fair Value Circuit Breakers on Banks’ Impairment and Trading Decisions"
+date: 2023-2-3
+date-format: D MMMM YYYY
+author: "Discussion by Martien Lubberink"
+bibliography: library.bib
+format:
+  revealjs: 
+    slide-number: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: logo-white-full.svg
+    #theme: dark
+    css: styles.css
+    #footer: <https://www.wgtn.ac.nz/>
+---
+
+## What the paper finds ... {.smaller}
+
+ 
+
+ 
+
+::: columns
+::: {.column width="50%"}
+ 
+
+$PV = f(\text{Bank Presence})$, led by cooperative banks and savings banks. 
+
+However, this relation varies across the different types of banks and is particularly pronounced for locally rooted banks with a mandate to promote the regional economy.
+:::
+
+::: {.column width="50%"}
+ 
+
+Banks substitute rather than complement government subsidies:
+
+ 
+
+$\frac{\Delta Subsidies}{\Delta branch} = -981kEur$
+
+:::
+:::
+
+## Great paper {.smaller}
+
+::: columns
+::: {.column width="75%"}
+ 
+
+What I like
+
+-   Interesting results, great data used, results are sensible, novel.
+
+Brief comments 
+
+-   Why do borrowers pay 2.56 percent, while KfW charges 76 bp?
+-   Do locals pressure banks to adjust lending standards [see @Vins2008; @CalomirisHaber2014].
+-   Re policy recommendations: government can get it wrong, while there seems to be a functioning (albeit imperfectly) market.  
+-   Title mentions "opportunism"
+-   Lastly, as an aside: will demand for PV be the same in all parts of Germany?
+
+:::
+
+::: {.column width="25%"}
+ 
+
+<p align="right">
+
+<img src="C3S_ESOTC18_Spotlighton_sunshineduration_Fig1_branded.png" alt="sunshine" width="800"/>
+
+</p>
+:::
+:::
+
+## References
+
+::: {#refs}
+:::
