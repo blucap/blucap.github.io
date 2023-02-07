@@ -3,7 +3,7 @@ title: "TruPS, I Did It Again"
 subtitle: "The Impact of Fair Value Circuit Breakers on Banks’ Impairment and Trading Decisions"
 date: 2023-2-3
 date-format: D MMMM YYYY
-author: "Discussion by Martien Lubberink"
+author: "Discussion by Martien Lubberink VUW"
 bibliography: library.bib
 format:
   revealjs: 
@@ -17,29 +17,45 @@ format:
     #footer: <https://www.wgtn.ac.nz/>
 ---
 
-## What the paper finds ... {.smaller}
-
- 
-
- 
+## TruPS 
 
 ::: columns
-::: {.column width="50%"}
- 
+::: {.column width="75%"}
 
-$PV = f(\text{Bank Presence})$, led by cooperative banks and savings banks. 
+- TruPS are hybrid securities that can count as bank capital since a 1996 [Federal Reserve press release](https://www.federalreserve.gov/BOARDDOCS/PRESS/BCREG/1996/19961021/default.htm).
 
-However, this relation varies across the different types of banks and is particularly pronounced for locally rooted banks with a mandate to promote the regional economy.
+- Regarding bank capital, prudential supervisors focus on one property 
+
+::: incremental
+-   You got it, loss absorption!
 :::
 
-::: {.column width="50%"}
- 
+:::
+::: {.column width="25%"}
 
-Banks substitute rather than complement government subsidies:
+<p align="right">
+<img src="towel.gif" alt="sunshine" width="800"/>
+</p>
 
- 
+:::
+:::
 
-$\frac{\Delta Subsidies}{\Delta branch} = -981kEur$
+## TruPS - could they aborbs loiss
+
+::: columns
+::: {.column width="75%"}
+
+-  
+
+
+
+::: incremental
+-   You got it, loss aborption!
+:::
+
+:::
+::: {.column width="25%"}
+
 
 :::
 :::
