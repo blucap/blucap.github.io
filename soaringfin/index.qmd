@@ -164,7 +164,6 @@ Martien Lubberink
 <img src="flying_hours_brian.png" alt="monthly flying hours" width="500"/>
 </p>
 
-
 ## Service hours monthly
 
 <p align="center">
