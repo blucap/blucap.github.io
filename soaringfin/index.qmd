@@ -2,7 +2,7 @@
 title: "WWGC Financials"
 subtitle: "Wellington Wairarapa Gliding Club"
 author: "Martien  Lubberink"
-date: 2023-03-26
+date: 2023-04-09
 date-format: DD MMMM YYYY
 format:
   revealjs: 
