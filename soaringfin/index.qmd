@@ -136,3 +136,51 @@ Martien Lubberink
 </p>
 
 - Annual service hours
+
+## Gliding days monthly
+
+<p align="center">
+<img src="gliding_days_brian.png" alt="gliding days" width="500"/>
+</p>
+
+
+## Soaring days monthly (+30 minutes)
+
+<p align="center">
+<img src="soaring_days_cat1_brian.png" alt="Soaring Days" width="500"/>
+</p>
+
+## Winch launches monthly
+
+<p align="center">
+<img src="winch_launces_brian.png" alt="winch launches" width="500"/>
+</p>
+
+
+
+## Flying hours monthly
+
+<p align="center">
+<img src="flying_hours_brian.png" alt="monthly flying hours" width="500"/>
+</p>
+
+
+
+## Service hours monthly
+
+<p align="center">
+<img src="service_brian.png" alt="service_brian" width="500"/>
+</p>
+
+## Start time singles
+
+<p align="center">
+<img src="brian_start_time_Singles.png" alt="brian_start_time_Singles" width="500"/>
+</p>
+
+## Start time twins
+
+<p align="center">
+<img src="brian_start_time_Twins.png" alt="brian_start_time_Twins" width="500"/>
+</p>
+
