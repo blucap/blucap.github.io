@@ -20,7 +20,7 @@ format:
 
  
 
-Using glidingops and Python I made some graphs
+Using glidingops and Python I made some graphs.
 
 ::: aside
 Martien Lubberink
