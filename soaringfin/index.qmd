@@ -186,27 +186,27 @@ Martien Lubberink
 ## Summer Flights per Month
 
 <p align="center">
-<img src="flights_months_brian.png" alt="flights_months_brian" width="700"/>
+<img src="flights_months_brian.png" alt="flights_months_brian" width="800"/>
 </p>
 
 
 ## Summer Flying Days per Month
 
 <p align="center">
-<img src="flying_days_months_brian.png" alt="flying_days_months_brian" width="700"/>
+<img src="flying_days_months_brian.png" alt="flying_days_months_brian" width="800"/>
 </p>
 
 
 ## Summer Flights per Year
 
 <p align="center">
-<img src="flights_years_brian.png" alt="flights_years_brian" width="500"/>
+<img src="flights_years_brian.png" alt="flights_years_brian" width="600"/>
 </p>
 
 
 ## Summer Flying Days per Year
 
 <p align="center">
-<img src="flying_days_years_brian.png" alt="flying_days_years_brian" width="500"/>
+<img src="flying_days_years_brian.png" alt="flying_days_years_brian" width="600"/>
 </p>
 
