@@ -18,6 +18,7 @@ format:
 
 ## Wellington Wairarapa Gliding Club
 
+
  
 
 Using glidingops and Python I made some graphs
