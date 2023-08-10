@@ -1,0 +1,131 @@
+---
+title: "VUW Financials"
+subtitle: "Keeping it simple"
+author: "Martien  Lubberink"
+date: 2023-08-11
+date-format: DD MMMM YYYY
+format:
+  revealjs: 
+    slide-number: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    #logo: logo-white-full.svg
+    #theme: dark
+    css: styles.css
+    #footer: <https://www.wgtn.ac.nz/>
+---
+
+## The university balance sheet and cash flows are strong:
+
+ 
+
+
+| 
+|------------------------------------|--------:|--------:|--------:|--------:|--------:|
+|                                    | 2018    | 2019    | 2020    | 2021    | 2022    |
+|Leverage                            | 76%     | 77%     | 79%     | 82%     | 81%     |
+|Cash flows                          | 71,338  | 81,362  | 59,915  | 74,763  | 43,994  |
+|
+
+## However, finanical management started slipping after 2021
+| 
+|-----------------------------------|--------:|--------:|--------:|--------:|--------:|
+|                                   | 2018    | 2019    | 2020    | 2021    | 2022    |
+$\Delta$ revenue                    |         | 3.3%    | \-3.2%  | 5.7%    |  <span style="color:red;">\-4.7%</span> |
+$\Delta$ people                     |         | 7.5%    | 1.5%    | \-0.7%  | <span style="color:red;">5.8%</span>    |
+ROE                                 | 1.96%   | 0.66%   | \-1.10% | 2.30%   | <span style="color:red;">\-1.50%</span> |
+Capex                               | \-43,309| \-60,284| \-46,693| \-63,479| <span style="color:red;">\-76,350</span>|
+Depreciation                        | 49,448  | 51,663  | 56,848  | 46,847  | 48,363 |
+Free CF                             | 28,029  | 21,078  | 13,222  | 11,284  | <span style="color:red;">\-32,356</span>|
+
+Again, solid cash, cash flows, capital.
+
+## What can the university do?
+
+Focus on main cost categories:
+
+- Staff - redundancies.
+- Real estate - mainly depreciate less.
+
+
+## Contributing to perils:
+
+:::: {.columns}
+
+::: {.column width="60%"}
+Exogenous
+
+- Declining EFTs
+- Cost of living
+- Strong job market
+
+Endogenous
+
+- Risk management
+- 'University for old people' stigma
+- TEC's FMF
+
+:::
+
+::: {.column width="5%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="35%"}
+<img src="succession.jpeg" alt="succession">
+:::
+
+::::
+
+## TEC's Financial Monitoring Framework
+
+
+<p align="center">
+<img src="tec_fmf_1.png" alt="counts" width="800"/>
+</p>
+
+## TEC's Financial Monitoring Framework
+
+<p align="center">
+<img src="tec_fmf_2.png" alt="counts" width="800"/>
+</p>
+
+## TEC's Financial Monitoring Framework
+
+<p align="center">
+<img src="tec_fmf_3.png" alt="counts" width="800"/>
+</p>
+
+## TEC's Financial Monitoring Framework
+<p align="center">
+<img src="tec_fmf_4.png" alt="counts" width="800"/>
+</p>
+The complexity of the framework led TEC to abandon it: now "holistic approach". Still, universities abide by it.
+
+
+## Suggestion: manage universities like banks:
+
+ 
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- Strong centralised supervision.
+- Focus on governance, specifically 
+  - solvency and liquidity, 
+  - risk management, 
+  - disclosures.
+- Leave activities to the faculties.
+
+:::
+
+::: {.column width="5%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="35%"}
+<img src="leverage.png" alt="counts">
+:::
+
+::::
