@@ -16,7 +16,13 @@ format:
     #footer: <https://www.wgtn.ac.nz/>
 ---
 
-## The university balance sheet and cash flows are strong:
+<style>
+ul li {
+    font-size: 0.8em; /* Adjust this value to get the desired font size */
+}
+</style>
+
+## The university balance sheet and cash flows are strong!
 
  
 
@@ -65,6 +71,7 @@ Endogenous
 - Risk management
 - 'University for old people' stigma
 - TEC's FMF
+- Ad interim VC
 
 :::
 
@@ -104,7 +111,7 @@ Endogenous
 The complexity of the framework led TEC to abandon it: now "holistic approach". Still, universities abide by it.
 
 
-## Suggestion: manage universities like banks:
+## Suggestion: manage universities like banks.
 
  
 
