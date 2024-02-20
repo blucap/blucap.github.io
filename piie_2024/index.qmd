@@ -1,0 +1,268 @@
+---
+title: "Banking prudential policy and climate change risks"
+subtitle: " "
+author: 
+  - name: "Martien Lubberink" 
+    affiliation: Victoria University Wellington - Te Herenga Waka
+    affiliation_url: https://people.wgtn.ac.nz/martien.lubberink
+date: 2024-2-21
+date-format: DD MMMM YYYY
+format:
+  revealjs: 
+    slide-number: false
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: logo-white-full.svg
+    #theme: dark
+    css: styles.css
+    #footer: <https://www.wgtn.ac.nz/>
+---
+
+## A promising start ... {.smaller}
+
+ 
+
+ 
+
+::: columns
+::: {.column width="50%"}
+ 
+
+When I started preparing these slides, I found this comment somewhere on my drive:
+:::
+
+::: {.column width="50%"}
+ 
+
+<p align="right">
+
+<img src="reg_obs.png" alt="reg_obs" width="800"/>
+
+</p>
+:::
+:::
+
+## The Good, the Bad and the Ugly ... {.smaller}
+
+of bank supervision.
+
+::: columns
+::: {.column width="60%"}
+ 
+
+ 
+
+The Basel bank supervision approach:
+
+-   Pillar 1: Minimum Capital Requirements
+-   Pillar 2: Supervisory Review Process
+-   Pillar 3: Disclosures, Market Discipline
+
+:::
+
+::: {.column width="40%"}
+ 
+
+<p align="right">
+
+<img src="The-good-the-bad-and-the-ugly.jpg" alt="GBU" width="500"/>
+
+</p>
+:::
+:::
+
+## BCBS membership {.smaller}
+
+Dominant players are:
+
+-   Europe: ten countries + ECB, and ECB-SSM. EBA and EC are observers.
+
+::: incremental
+-   The **United** States: four agencies.
+-   (I grouped Hong Kong SAR with China.)
+:::
+
+<p align="center">
+
+<img src="basel_countries_small.png" alt="GBU" width="700"/>
+
+</p>
+
+## A dominant player: Europe {.smaller}
+
+::: columns
+::: {.column width="60%"}
+The EU does a lot in this space, in particular regarding disclosures:
+
+-   See the EBA's [Pillar 3 ESG ITS](https://www.eba.europa.eu/eba-publishes-binding-standards-pillar-3-disclosures-esg-risks) (Article 449a of the [CRR](https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32013R0575)).
+    -   Part of wider [EU disclosure initiatives](ESG%20disclosures%20in%20the%20EU%20-%20financial%20institutions.jpg).
+    -   Neatly summarized in [this graph](EBA%20summary%20of%20ESG%20disclosures%20-%20Pillar%203.jpg).
+-   Time-lines:
+    -   First disclosure reference date as of 31 December 2022.
+    -   Phase-in period until June 2024 for Scope 3 emissions and alignment metrics.
+    -   The disclosure of information on the GAR will start to apply in 2024 for data as of end 2023.
+:::
+
+::: {.column width="40%"}
+<p align="right">
+
+<img src="EBA_ITS_P3b.png" alt="EBA1" width="400"/>
+
+</p>
+
+<p align="right">
+
+<img src="EBA_ITS_P3a.png" alt="EBA1" width="400"/>
+
+</p>
+:::
+:::
+
+## The ambitious ECB {.smaller}
+
+Important document:  *Guide on climate-related and environmental risks*, which includes supervisory [expectations](https://www.bankingsupervision.europa.eu/ecb/pub/pdf/ssm.202011finalguideonclimate-relatedandenvironmentalrisks~58213f6564.en.pdf) to banks (2020).
+
+-   Following the [November 2022 thematic review](https://www.bankingsupervision.europa.eu/ecb/pub/pdf/ssm.221102_presentation_slides~76d2334552.en.pdf), banks should, by end of 2024:
+    1.  Adequately categorise climate and environmental risks and to conduct a full assessment of their impact on the banks' activities by March 2023 at the latest.
+    2.  At the latest by the end of 2023, include climate and environmental risks in their governance, strategy and risk management.
+    3.  By the end of 2024 meet all remaining supervisory expectations on climate and environmental risks outlined in 2020, including full integration in the Internal Capital Adequacy Assessment Process (ICAAP) and stress testing.
+
+Most recently, it [decided](https://www.ecb.europa.eu/press/pr/date/2024/html/ecb.pr240130~afa3d90e07.en.html) to step up climate work with focus on green transition, climate and [nature-related risks]{.fragment .highlight-red}: *By broadening and intensifying our efforts we can better understand the implications of these changes and, in doing so, help to underpin stability and support the green transition of the economy and the financial system.*
+
+## The ambitious ECB {.smaller}
+
+-   The ECB also relies on stress testing:
+    -   "The outcomes of the exercise will instead be incorporated into the annual SREP assessment in a qualitative manner, alongside the findings of the parallel thematic review on climate-related and environmental risks." ([ECB, 2022 climate risk stress 
+test](https://www.bankingsupervision.europa.eu/ecb/pub/pdf/ssm.climate_stress_test_report.20220708~2e3cc0999f.en.pdf))
+
+<p align="center">
+<img src="ecb.ebbox202302_06.en_img0.png" alt="ST" width="600"/>
+</p>
+
+    
+## And the ECB is will use the stick:{.smaller}
+-   "for a small number of institutions, the outcome of the 2022 supervisory exercises on C&E risks had an impact on their SREP scores. These in turn, have an impact on their Pillar 2 capital requirements" ([ECB, Walking the Talk, November 2022](https://www.bankingsupervision.europa.eu/press/pr/date/2022/html/ssm.pr221102~2f7070c567.en.html))
+-   Last november the ECB [threatened](https://www.bloomberg.com/news/articles/2023-11-22/ecb-threatens-20-banks-with-fines-for-mismanaging-climate-risk?sref=gPAG2MJ8) to fine banks over climate risk shortcomings.
+
+## Bank of England {.smaller}
+
+On the use of Pillar 1:
+
+-   "We find that [regulatory capital is not the right tool]{.fragment .highlight-red} to address the causes of climate change (greenhouse gas emissions), but should have a role in dealing with its consequences (financial risks). ... [the PRA already expects firms to capture and capitalise for climate-related financial risks where they are material, using current capital frameworks.]{.fragment .highlight-blue}" ([Sam Woods](https://www.bankofengland.co.uk/-/media/boe/files/prudential-regulation/publication/2021/october/climate-change-adaptation-report-2021.pdf?la=en&hash=FF4A0C618471462E10BC704D4AA58727EC8F8720), Deputy Governor for Prudential Regulation, Bank of England, 28 October 2021)
+
+On the use of Pillar 2:
+
+-   Currently, firms should capture material climate-related financial risks if they are exposed to these risks and they are not (fully) captured in Pillar 1.
+-   Moreover, the PRA buffer is designed to reflect risks that firms become exposed to in the future over a three to five year time horizon under a severe but plausible stress.
+
+## Across the Atlantic: the USA {.smaller}
+
+- The FED joined the Network of Central Banks and Supervisors for Greening the Financial System (NGFS) relatively late, 2020. (The ECB joined in 2018 and founding Central banks in 2017.)
+- Attention to climate thanks to efforts of NY Fed Head of Supervision Kevin Stiroh and former Governor Lael Brainard (2019).
+
+- [Jerome Powell](https://www.federalreserve.gov/newsevents/pressreleases/powell-statement-20231024b.htm#:~:text=Banks%20need%20to%20understand%2C%20and,able%20to%20support%20its%20issuance.):
+    - It is also important to continue to be clear on what we are not doing. [The Federal Reserve is not and will not be a "climate policymaker."]{.fragment .highlight-red} Decisions about policies to address climate change must be made by the elected branches of government. Over time, we must be vigilant to avoid crossing or blurring that line. It is not the Fed's role to tell banks which businesses they can and cannot lend to, and this guidance is not intended to do so. (24 October 2024, at the launch of the [principles for climate-related financial risk management for large financial institutions](https://www.federalreserve.gov/newsevents/pressreleases/bcreg20231024b.htm).)
+
+## Across the Atlantic: the USA {.smaller}
+
+- The FED joined the Network of Central Banks and Supervisors for Greening the Financial System (NGFS) relatively late, 2020. (The ECB joined in 2018 and founding Central banks in 2017.)
+- Attention to climate thanks to efforts of NY Fed Head of Supervision Kevin Stiroh and former Governor Lael Brainard (2019).
+
+- [Michael S. Barr](https://www.federalreserve.gov/newsevents/testimony/files/barr20221115a.pdf): 
+    - "We are also working to understand financial risks related to climate change. At the Federal Reserve, [our mandate in this area is important, but narrow]{.fragment .highlight-red}, and we are focused on our supervisory responsibilities and our role in promoting a safe and stable financial system." (15 November 2022)
+
+- But this year the FED launched a pilot climate scenario analysis exercise assessing banks’ resilience to a set of forward-looking scenarios.
+
+
+
+## Other countries:{.smaller}
+
+<p align="center">
+<img src="international.png" alt="ST" width="1200"/>
+</p>
+
+Source: [Carlo Di Maio, et al. 2023](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4647667)
+
+
+## The Basel Committee {.smaller}
+
+Different views on the urgency of climate-related financial risks:
+
+-   The Basel committee on 15 September 2022 [mentioned](https://www.bis.org/press/p220915.htm) re climate: "Discuss ongoing work related to measures to address climate-related financial risks."
+
+and, referring to the [GHOS](https://www.bis.org/press/p220913.htm)
+
+-   The GHOS also reviewed the Committee's work on [climate-related]{.underline} financial risks and [cryptoassets]{.underline}.
+-   On [climate]{.fragment .highlight-red}, GHOS members reaffirmed the scope of the Committee's work -- and endorsed the Committee's [holistic approach]{.fragment .highlight-red} to developing and assessing potential measures related to disclosure, supervision and/or regulation.
+-   On [cryptoassets]{.fragment .highlight-red}, members reiterated the importance of designing a robust and prudent regulatory framework for banks' exposures to cryptoassets that promotes responsible innovation while preserving financial stability. [The GHOS tasked the Committee with finalising such a framework around the end of this year.]{.fragment .highlight-red}
+
+## The Basel Committee {.smaller}
+
+So, the Committee moves cautiously. It suggests that climate risk should be part of the overall risk management framework, i.e. no change to Pillar 1 proposed. 
+
+- "The high degree of uncertainty around the timing of physical and transition risks suggests that banks should take a prudent and dynamic approach to developing their risk management capacities." (FAQ of [November 2021](https://www.bis.org/bcbs/publ/d530.htm)).
+
+- "The Basel Committee is taking a holistic approach to addressing climate-related financial risks to 
+the global banking system in support of its mandate to strengthen the regulation, supervision and 
+practices of banks worldwide with the purpose of enhancing financial stability." (Principles on climate-related financial risks of [December 2022](https://www.bis.org/bcbs/publ/d543.pdf)). 
+
+
+- On disclosures, the Committee moves cautiously. It appears to take inspiration from the EBA's Pillar 3 disclosures standard. (See *Disclosure of climate related financial risks*, [November 2023](https://www.bis.org/bcbs/publ/d560.pdf)).
+
+
+## Some observations:{.smaller}
+
+- Globally a strong focus on disclosures (Pillar 3) and supervisory review measures (Pillar 2)
+- Pillar 1, i.e. capital requirements, still untouchable. ECB's [Andrea Enria](https://www.bankingsupervision.europa.eu/press/interviews/date/2022/html/ssm.in221115~bd4306961f.en.html): "I don't think we are still talking about the Pillar 1 requirements at the moment"
+- ECB taking the lead, at times overzealous, e.g. by way of re-interpreting its mandate:
+
+   - The primary objective of the ECB shall be to maintain price stability.
+   - Without prejudice to the objective of price stability, the [ECB shall support the general economic policies in the Union with a view to contributing to the achievement of the objectives of the Union ... .]{.fragment .highlight-red}
+   - The ESCB shall act in accordance with the principle of an [open market economy with free competition]{.fragment .highlight-red}, favouring an efficient allocation of resources, and in compliance with the principles set out in Article 119.
+
+
+## Some observations:{.smaller}
+
+::: columns
+
+::: {.column width="60%"}
+The ECB also creates a strong sense of urgency and it makes odd reporting and research choices. 
+
+- [ECB 2022 climate risk stress test](https://www.bankingsupervision.europa.eu/press/pr/date/2022/html/ssm.pr220708~565c38d18a.en.html)
+    -   Projection of €70bn of aggregate losses on a sum of €25tn of assets.
+
+- Note also the picture from an earlier [ECB climate stress test document](https://www.ecb.europa.eu/press/blog/date/2021/html/ecb.blog210318~3bbc68ffc5.en.html):
+:::
+
+::: {.column width="40%"}
+<p align="left">
+
+<img src="ecb.blog210318.en_img1.png" alt="247" width="600"/>
+
+</p>
+:::
+:::
+
+
+## Much ado about Pillar 1, but note IFRS{.smaller}
+
+-   IFRS
+    -   Stranded assets will at some point affect the bottom line, resulting in lower capital.
+    -   See [Rabobank in 2022](https://media.rabobank.com/m/40a724896dac5e0a/original/Interim-Report-2022-EN.pdf): "The share of stage 2 exposures increased to 8.4%, on June 30, 2022, due to the classification of some sectors as vulnerable ... and after the Dutch government published its nitrogen policy approach."
+-   ISSB
+    -   "The Basel Committee welcomes the IFRS Foundation's establishment of the International Sustainability Standards Board"
+
+
+
+## Wrapping up {.smaller}
+
+-   Pillar 1: Minimum Capital Requirements - most powerful tool
+    -   But untouchable for now. 
+-   Pillar 2: Supervisory Review Process
+    -   Bank supervisors tread carefully, unless Pillar 2 used for covering material climate-related financial risks (BOE), while ECB appears to use Pillar 2 to discipline banks.
+-   Pillar 3: Disclosures - popular, but "You cannot talk yourself out of s..t you acted yourself into."
+
+Europe takes the lead, but global regulators may want to promote the importance of IFRS and ISSB.
+
+## 
