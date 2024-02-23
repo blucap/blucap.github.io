@@ -128,7 +128,7 @@ Important document:  *Guide on climate-related and environmental risks*, which i
     2.  At the latest by the end of 2023, include climate and environmental risks in their governance, strategy and risk management.
     3.  By the end of 2024 meet all remaining supervisory expectations on climate and environmental risks outlined in 2020, including full integration in the Internal Capital Adequacy Assessment Process (ICAAP) and stress testing.
 
-Most recently, it [decided](https://www.ecb.europa.eu/press/pr/date/2024/html/ecb.pr240130~afa3d90e07.en.html) to step up climate work with focus on green transition, climate and [nature-related risks]{.fragment .highlight-red}: *By broadening and intensifying our efforts we can better understand the implications of these changes and, in doing so, help to underpin stability and support the green transition of the economy and the financial system.*
+Most recently, it [decided](https://www.ecb.europa.eu/press/pr/date/2024/html/ecb.pr240130~afa3d90e07.en.html) to step up climate work with a focus on green transition, climate and [nature-related risks]{.fragment .highlight-red}: *By broadening and intensifying our efforts we can better understand the implications of these changes and, in doing so, help to underpin stability and support the green transition of the economy and the financial system.*
 
 ## The ambitious ECB {.smaller}
 
@@ -219,7 +219,7 @@ practices of banks worldwide with the purpose of enhancing financial stability."
 
    - The primary objective of the ECB shall be to maintain price stability.
    - Without prejudice to the objective of price stability, the [ECB shall support the general economic policies in the Union with a view to contributing to the achievement of the objectives of the Union ... .]{.fragment .highlight-red}
-   - The ESCB shall act in accordance with the principle of an [open market economy with free competition]{.fragment .highlight-red}, favouring an efficient allocation of resources, and in compliance with the principles set out in Article 119.
+   - The ECB shall act in accordance with the principle of an [open market economy with free competition]{.fragment .highlight-red}, favouring an efficient allocation of resources, and in compliance with the principles set out in Article 119.
 
 
 ## Some observations:{.smaller}
