@@ -2,7 +2,7 @@
 title: "WWGC Financials"
 subtitle: "Wellington Wairarapa Gliding Club"
 author: "Martien  Lubberink"
-date: 2025-05-05
+date: 2025-05-11
 date-format: DD MMMM YYYY
 format:
   revealjs: 
@@ -16,18 +16,8 @@ format:
     #footer: <https://www.wgtn.ac.nz/>
 ---
 
-## Wellington Wairarapa Gliding Club
 
-
- 
-
-Using glidingops and Python I made some graphs
-
-::: aside
-Martien Lubberink
-:::
-
-## Flights by week - tracking
+## Flights by week - all gliders
 
 <p align="center">
 <img src="counts_all.png" alt="counts" width="600"/>
@@ -35,33 +25,33 @@ Martien Lubberink
 
 - Flights (Time in weeks, starting July ending June)
 
-## Flights by week - tracking
+## Flights by week - all gliders
 
 <p align="center">
 <img src="hours_all.png" alt="counts" width="600"/>
 </p>
 
-- All hours
+- All gliders - all hours
 
-## Flights by week - tracking
+## Flights by week - all gliders
 
 <p align="center">
 <img src="counts_all_winch.png" alt="counts" width="600"/>
 </p>
 
-- Winch launches
+- Winch launches, all gliders
 
 
-## Flights by week - tracking
+## Flights by week - Privately owned
 
 <p align="center">
 <img src="counts_private.png" alt="counts" width="600"/>
 </p>
 
-- Privately owned, count
+- Privately owned, which launches
 
 
-## Flights by week - tracking
+## Flights by week - Privately owned
 
 <p align="center">
 <img src="hours_private.png" alt="counts" width="600"/>
@@ -69,16 +59,16 @@ Martien Lubberink
 
 - Privately owned, hours
 
-## Flights by week - tracking
+## Flights by week - Club owned
 
 <p align="center">
 <img src="counts_club.png" alt="counts" width="600"/>
 </p>
 
-- Club owned, count
+- Club owned, which launches
 
 
-## Flights by week - tracking
+## Flights by week - Club owned
 
 <p align="center">
 <img src="hours_club.png" alt="counts" width="600"/>
@@ -87,16 +77,16 @@ Martien Lubberink
 - Club owned, hours
 
 
-## Flights by month - tracking
+## Flights by month - Flying days
 
 <p align="center">
 <img src="flying_days.png" alt="flying days" width="600"/>
 </p>
 
-- Flying days
 
 
-## Flights by month - tracking
+
+## Flights by month - Flying days
 
 <p align="center">
 <img src="soaring_days_cat2.png" alt="soaring_days_cat2" width="600"/>
@@ -104,7 +94,7 @@ Martien Lubberink
 
 - Soaring days CAT2
 
-## Flights by month - tracking
+## Flights by month - Flying days
 
 <p align="center">
 <img src="soaring_days_cat1.png" alt="soaring_days_cat1" width="600"/>
