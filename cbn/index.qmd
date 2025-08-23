@@ -1,5 +1,5 @@
 ---
-title: "CBN Rulebook — Chapter Summaries"
+title: "The Consumer Credit sourcebook — Chapter Summaries"
 author: "Martien Lubberink"
 date: today
 freeze: false
@@ -17,7 +17,9 @@ page-layout: article
 
 This page lists the chapter summaries for the [The Consumer Credit sourcebook](https://www.handbook.fca.org.uk/handbook/CONC.pdf) ([CONC](https://www.handbook.fca.org.uk/handbook/CONC/1/1.html)) and provides direct download links to both Markdown (`.md`) and Word (`.docx`) versions.
 
-**Note**, Chapter 7 was too big too summarise in one go, so it is split into two.
+The reason why I posted these files is that the entire CONC is well over 400 pages. Therefore hard to turn into a single CBN chapter. By breaking the CONC up in chapters, the work can be prioritized. The relevance assessment and the relevance report show the relevance of each chapter.
+
+**Note**, Chapter 7 was too big to summarize in one go, so it is split into two.
 
 ```{r}
 #| label: setup
