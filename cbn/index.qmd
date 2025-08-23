@@ -1,0 +1,136 @@
+---
+title: "CBN Rulebook — Chapter Summaries"
+author: "Martien Lubberink"
+date: today
+freeze: false
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    anchor-sections: true
+    df-print: paged
+page-layout: article
+---
+
+## Overview
+
+This page lists the chapter summaries for the [The Consumer Credit sourcebook](https://www.handbook.fca.org.uk/handbook/CONC.pdf) ([CONC](https://www.handbook.fca.org.uk/handbook/CONC/1/1.html)) and provides direct download links to both Markdown (`.md`) and Word (`.docx`) versions.
+
+**Note**, Chapter 7 was too big too summarise in one go, so it is split into two.
+
+```{r}
+#| label: setup
+#| include: false
+
+# Helper: human-readable file sizes (base R only)
+fmt_size <- function(bytes) {
+  units <- c("B","KB","MB","GB","TB")
+  if (is.na(bytes) || is.null(bytes)) return(NA_character_)
+  pow <- ifelse(bytes > 0, floor(log(bytes, 1024)), 0)
+  pow <- pmin(pow, length(units) - 1)
+  sprintf("%.1f %s", bytes/(1024^pow), units[pow+1])
+}
+```
+
+## Other downloads
+
+The following additional files in this folder are exposed for convenience:
+
+```{r}
+#| label: other-files
+#| echo: false
+#| warning: false
+#| message: false
+#| results: asis
+
+others <- c(
+  "CBN_All_Summaries.docx",
+  "CBN_relevance_report.docx",
+  "CBN_relevance_assessment.xlsx"
+)
+
+exists <- file.exists(others)
+if (any(exists)) {
+  for (f in others[exists]) {
+    info <- file.info(f)
+    cat(sprintf(
+      "- <a href=\"%s\" download>%s</a>  <span style=\"opacity:0.7\">(%s; updated %s)</span>\n",
+      f, f, fmt_size(info$size), format(info$mtime, "%Y-%m-%d %H:%M")
+    ))
+  }
+} else {
+  knitr::asis_output("_No additional files found._")
+}
+```
+
+## Chapter downloads
+
+```{r}
+#| label: build-index
+#| echo: false
+#| warning: false
+#| message: false
+
+# List candidate files in the current directory (the /cbn folder)
+md_files   <- list.files(pattern = "^ch_.*_summary\\.md$",   ignore.case = TRUE)
+docx_files <- list.files(pattern = "^ch_.*_summary\\.docx$", ignore.case = TRUE)
+
+# Base names without extension to pair md <-> docx
+base_md   <- sub("\\.md$", "", md_files,   ignore.case = TRUE)
+base_docx <- sub("\\.docx$", "", docx_files, ignore.case = TRUE)
+bases <- sort(unique(c(base_md, base_docx)))
+
+# Build a small data.frame
+rows <- lapply(bases, function(b) {
+  md   <- paste0(b, ".md")
+  docx <- paste0(b, ".docx")
+
+  md_exists   <- file.exists(md)
+  docx_exists <- file.exists(docx)
+
+  # File info
+  md_info   <- if (md_exists)   file.info(md)   else NULL
+  docx_info <- if (docx_exists) file.info(docx) else NULL
+
+  # Chapter label from filename e.g., "ch_05A_summary" -> "05A"
+  chapter <- toupper(gsub("^ch_([^_]+).*", "\\1", b))
+
+  # Build HTML links (use download attribute to force download where supported)
+  md_link   <- if (md_exists)   sprintf('<a href="%s" download>MD</a>',   md)   else ""
+  docx_link <- if (docx_exists) sprintf('<a href="%s" download>DOCX</a>', docx) else ""
+
+  # Updated timestamp: prefer the newest of the pair
+  updated <- as.POSIXct(NA)
+  if (!is.null(md_info))   updated <- md_info$mtime
+  if (!is.null(docx_info)) updated <- max(updated, docx_info$mtime, na.rm = TRUE)
+
+  # Size strings
+  size_str <- paste(
+    c(
+      if (md_exists)   sprintf("md %s",   fmt_size(md_info$size))   else NULL,
+      if (docx_exists) sprintf("docx %s", fmt_size(docx_info$size)) else NULL
+    ),
+    collapse = " · "
+  )
+
+  data.frame(
+    Chapter = chapter,
+    Downloads = paste(md_link, docx_link),
+    Updated = if (is.na(updated)) "" else format(updated, "%Y-%m-%d %H:%M"),
+    Size = size_str,
+    stringsAsFactors = FALSE
+  )
+})
+
+df <- do.call(rbind, rows)
+df <- df[order(df$Chapter), , drop = FALSE]
+
+# Render a simple table (no external dependencies)
+knitr::kable(
+  df,
+  align = c("l","c","l","r"),
+  escape = FALSE,
+  col.names = c("Chapter", "Downloads", "Updated", "Size")
+)
+```
