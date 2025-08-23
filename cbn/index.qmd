@@ -80,7 +80,7 @@ for (item in collections) {
 ```
 ::::
 
-## Chapter Summaries
+## Original pdfs and Chapter Summaries
 
 ```{r}
 #| label: build-table
