@@ -1,5 +1,5 @@
 ---
-title: "The Consumer Credit sourcebook — Chapter Summaries"
+title: "The Consumer Credit Sourcebook – Chapter Summaries"
 author: "Martien Lubberink"
 date: today
 freeze: false
@@ -10,22 +10,30 @@ format:
     toc-depth: 2
     anchor-sections: true
     df-print: paged
+    css: |
+      <style>
+      .priority-essential { background:#d4edda; color:#155724; padding:3px 10px; border-radius:4px; font-weight:bold; }
+      .priority-important { background:#fff3cd; color:#856404; padding:3px 10px; border-radius:4px; font-weight:bold; }
+      .priority-optional { background:#f8d7da; color:#721c24; padding:3px 10px; border-radius:4px; }
+      .score-bar { background: linear-gradient(90deg, #28a745 0%, #ffc107 50%, #dc3545 100%); height: 8px; border-radius: 4px; margin-top: 2px; }
+      </style>
 page-layout: article
 ---
 
 ## Overview
 
-This page lists the chapter summaries for the [The Consumer Credit sourcebook](https://www.handbook.fca.org.uk/handbook/CONC.pdf) ([CONC](https://www.handbook.fca.org.uk/handbook/CONC/1/1.html)) and provides direct download links to both Markdown (`.md`) and Word (`.docx`) versions.
+This page provides downloadable summaries of chapters from the [Consumer Credit Sourcebook](https://www.handbook.fca.org.uk/handbook/CONC.pdf) ([CONC](https://www.handbook.fca.org.uk/handbook/CONC/1/1.html)), analyzed for relevance to the Central Bank of Nigeria (CBN) regulatory framework.
 
-The reason why I posted these files is that the entire CONC is well over 400 pages. Therefore hard to turn into a single CBN chapter. By breaking the CONC up in chapters, the work can be prioritized. The relevance assessment and the relevance report show the relevance of each chapter.
-
-**Note**, Chapter 7 was too big to summarize in one go, so it is split into two.
+The entire CONC is over 400 pages, making it impractical to convert into a single CBN chapter. By breaking it into chapters and assessing relevance, the work can be prioritized effectively. Chapter 7 was split into two parts due to its size.
 
 ```{r}
 #| label: setup
 #| include: false
 
-# Helper: human-readable file sizes (base R only)
+library(jsonlite)
+library(knitr)
+
+# Helper: human-readable file sizes
 fmt_size <- function(bytes) {
   units <- c("B","KB","MB","GB","TB")
   if (is.na(bytes) || is.null(bytes)) return(NA_character_)
@@ -33,106 +41,292 @@ fmt_size <- function(bytes) {
   pow <- pmin(pow, length(units) - 1)
   sprintf("%.1f %s", bytes/(1024^pow), units[pow+1])
 }
+
+# Load relevance data if available
+relevance_data <- NULL
+if (file.exists("cbn_relevance_assessment.json")) {
+  relevance_data <- fromJSON("cbn_relevance_assessment.json")
+}
 ```
 
-## Other downloads
+## Quick Downloads
 
-The following additional files in this folder are exposed for convenience:
+:::: {.callout-tip}
+## Complete Collections
+For convenience, download all summaries and assessments in single files:
 
 ```{r}
-#| label: other-files
+#| label: quick-downloads
 #| echo: false
 #| warning: false
 #| message: false
 #| results: asis
 
-others <- c(
-  "CBN_All_Summaries.docx",
-  "CBN_relevance_report.docx",
-  "CBN_relevance_assessment.xlsx"
+collections <- list(
+  list(file = "CBN_All_Summaries.docx", icon = "📄", desc = "Complete summary collection"),
+  list(file = "CBN_relevance_report.docx", icon = "📋", desc = "Detailed relevance report"),
+  list(file = "CBN_relevance_assessment.xlsx", icon = "📊", desc = "Relevance assessment spreadsheet")
 )
 
-exists <- file.exists(others)
-if (any(exists)) {
-  for (f in others[exists]) {
-    info <- file.info(f)
+for (item in collections) {
+  if (file.exists(item$file)) {
+    info <- file.info(item$file)
     cat(sprintf(
-      "- <a href=\"%s\" download>%s</a>  <span style=\"opacity:0.7\">(%s; updated %s)</span>\n",
-      f, f, fmt_size(info$size), format(info$mtime, "%Y-%m-%d %H:%M")
+      "- %s [**%s**](%s) <span style='color:#666;font-size:0.9em'>(%s)</span>\n",
+      item$icon, item$desc, item$file, fmt_size(info$size)
     ))
   }
-} else {
-  knitr::asis_output("_No additional files found._")
 }
 ```
+::::
 
-## Chapter downloads
+## Chapter Summaries
 
 ```{r}
-#| label: build-index
+#| label: build-table
 #| echo: false
 #| warning: false
 #| message: false
 
-# List candidate files in the current directory (the /cbn folder)
-md_files   <- list.files(pattern = "^ch_.*_summary\\.md$",   ignore.case = TRUE)
+# List files
+md_files   <- list.files(pattern = "^ch_.*_summary\\.md$", ignore.case = TRUE)
 docx_files <- list.files(pattern = "^ch_.*_summary\\.docx$", ignore.case = TRUE)
 
-# Base names without extension to pair md <-> docx
-base_md   <- sub("\\.md$", "", md_files,   ignore.case = TRUE)
+# Get base names
+base_md   <- sub("\\.md$", "", md_files, ignore.case = TRUE)
 base_docx <- sub("\\.docx$", "", docx_files, ignore.case = TRUE)
 bases <- sort(unique(c(base_md, base_docx)))
 
-# Build a small data.frame
+# Build data frame
 rows <- lapply(bases, function(b) {
   md   <- paste0(b, ".md")
   docx <- paste0(b, ".docx")
-
+  
   md_exists   <- file.exists(md)
   docx_exists <- file.exists(docx)
-
-  # File info
-  md_info   <- if (md_exists)   file.info(md)   else NULL
-  docx_info <- if (docx_exists) file.info(docx) else NULL
-
-  # Chapter label from filename e.g., "ch_05A_summary" -> "05A"
-  chapter <- toupper(gsub("^ch_([^_]+).*", "\\1", b))
-
-  # Build HTML links (use download attribute to force download where supported)
-  md_link   <- if (md_exists)   sprintf('<a href="%s" download>MD</a>',   md)   else ""
-  docx_link <- if (docx_exists) sprintf('<a href="%s" download>DOCX</a>', docx) else ""
-
-  # Updated timestamp: prefer the newest of the pair
-  updated <- as.POSIXct(NA)
-  if (!is.null(md_info))   updated <- md_info$mtime
-  if (!is.null(docx_info)) updated <- max(updated, docx_info$mtime, na.rm = TRUE)
-
-  # Size strings
-  size_str <- paste(
-    c(
-      if (md_exists)   sprintf("md %s",   fmt_size(md_info$size))   else NULL,
-      if (docx_exists) sprintf("docx %s", fmt_size(docx_info$size)) else NULL
-    ),
-    collapse = " · "
+  
+  # Extract chapter name
+  chapter_raw <- gsub("^ch_([^_]+).*", "\\1", b)
+  chapter <- toupper(chapter_raw)
+  
+  # Get relevance info if available
+  priority <- "—"
+  score <- "—"
+  score_num <- 0
+  key_topic <- ""
+  
+  if (!is.null(relevance_data)) {
+    # Try to match with different formats
+    matching <- relevance_data[relevance_data$chapter == paste0("ch_", chapter_raw), ]
+    if (nrow(matching) == 0) {
+      matching <- relevance_data[relevance_data$chapter == chapter_raw, ]
+    }
+    
+    if (nrow(matching) > 0) {
+      priority <- matching$priority_level[1]
+      score_num <- matching$relevance_score[1]
+      score <- paste0(score_num, "/10")
+      if (!is.null(matching$key_topics) && length(matching$key_topics[[1]]) > 0) {
+        key_topic <- matching$key_topics[[1]][1]
+      }
+    }
+  }
+  
+  # Style priority badge
+  priority_badge <- switch(priority,
+    "Essential" = sprintf('<span class="priority-essential">%s</span>', priority),
+    "Important" = sprintf('<span class="priority-important">%s</span>', priority),
+    "Optional" = sprintf('<span class="priority-optional">%s</span>', priority),
+    priority
   )
-
+  
+  # Format chapter display
+  chapter_display <- switch(chapter,
+    "AX01PDF" = "Annex 1",
+    "AXTRPDF" = "Annex TR",
+    sprintf("Ch %s", chapter)
+  )
+  
+  # Check for PDF file
+  pdf_base <- gsub("_summary$", "", b)
+  pdf <- paste0(pdf_base, ".pdf")
+  pdf_exists <- file.exists(pdf)
+  
+  # Build download links with better formatting
+  download_links <- c()
+  if (pdf_exists) download_links <- c(download_links, sprintf('[📕 PDF](%s)', pdf))
+  if (md_exists) download_links <- c(download_links, sprintf('[📝 MD](%s)', md))
+  if (docx_exists) download_links <- c(download_links, sprintf('[📄 Word](%s)', docx))
+  downloads <- paste(download_links, collapse = " ")
+  
+  # Get file info for update time
+  updated <- as.POSIXct(NA)
+  if (md_exists) {
+    info <- file.info(md)
+    updated <- info$mtime
+  }
+  if (docx_exists) {
+    info <- file.info(docx) 
+    updated <- max(updated, info$mtime, na.rm = TRUE)
+  }
+  
+  # Truncate long key topics
+  if (nchar(key_topic) > 45) {
+    key_topic <- paste0(substr(key_topic, 1, 42), "...")
+  }
+  
   data.frame(
-    Chapter = chapter,
-    Downloads = paste(md_link, docx_link),
-    Updated = if (is.na(updated)) "" else format(updated, "%Y-%m-%d %H:%M"),
-    Size = size_str,
-    stringsAsFactors = FALSE
+    Chapter = sprintf("**%s**", chapter_display),
+    Priority = priority_badge,
+    Score = score,
+    score_num = score_num,
+    `Key Focus` = key_topic,
+    Downloads = downloads,
+    Updated = if(is.na(updated)) "" else format(updated, "%b %d"),
+    stringsAsFactors = FALSE,
+    check.names = FALSE
   )
 })
 
 df <- do.call(rbind, rows)
-df <- df[order(df$Chapter), , drop = FALSE]
 
-# Render a simple table (no external dependencies)
-knitr::kable(
+# Sort by score (descending), then by chapter
+#if (!is.null(relevance_data)) {
+#  df <- df[order(-df$score_num, df$Chapter), ]
+  #df <- df[order(df$Chapter), ]
+#}
+
+# Remove the score_num column before display
+df$score_num <- NULL
+
+# Render table
+kable(
   df,
-  align = c("l","c","l","r"),
-  escape = FALSE,
-  col.names = c("Chapter", "Downloads", "Updated", "Size")
+  align = c("l", "c", "c", "l", "c", "r"),
+  escape = FALSE
 )
 ```
+
+## Priority Guide
+
+:::: {.panel-tabset}
+
+### 🟢 Essential Chapters
+**Direct application to CBN's core mandate** (Score: 8/10)
+
+These chapters contain critical regulatory frameworks:
+- Banking supervision and prudential guidelines
+- Capital requirements and solvency standards
+- Core compliance procedures and reporting
+- Consumer protection and fair lending practices
+
+*Recommended: Implement these chapters first with minimal adaptation*
+
+### 🟡 Important Chapters  
+**Valuable frameworks requiring adaptation** (Score: 6-7/10)
+
+These chapters provide supporting regulatory concepts:
+- Specific banking area regulations (overdrafts, credit cards)
+- Risk management and monitoring frameworks
+- Agent banking and third-party oversight
+- Fee transparency and disclosure requirements
+
+*Recommended: Adapt these to Nigerian banking context*
+
+### 🔴 Optional Chapters
+**Reference material for specific cases** (Score: <6/10)
+
+These chapters have limited direct application:
+- UK-specific transitional provisions
+- Specialized products (rent-to-own)
+- Narrow regulatory exemptions
+- Historical implementation guidance
+
+*Recommended: Reference only when needed for specific issues*
+::::
+
+## Statistics Summary
+
+```{r}
+#| label: statistics
+#| echo: false
+#| warning: false
+#| message: false
+#| results: asis
+
+if (!is.null(relevance_data)) {
+  essential_count <- sum(relevance_data$priority_level == "Essential")
+  important_count <- sum(relevance_data$priority_level == "Important")
+  optional_count <- sum(relevance_data$priority_level == "Optional")
+  avg_score <- mean(relevance_data$relevance_score)
+  
+  cat(":::: {.callout-note}\n")
+  cat("## Assessment Summary\n\n")
+  cat(sprintf("- **Total Chapters Analyzed:** %d\n", nrow(relevance_data)))
+  cat(sprintf("- **Average Relevance Score:** %.1f/10\n", avg_score))
+  cat(sprintf("- **Distribution:** %d Essential, %d Important, %d Optional\n", 
+              essential_count, important_count, optional_count))
+  cat(sprintf("- **High Priority Chapters (Score ≥8):** %d\n", 
+              sum(relevance_data$relevance_score >= 8)))
+  cat("::::\n")
+}
+```
+
+## Usage Notes
+
+:::: {.columns}
+::: {.column width="33%"}
+### 📕 PDF Files (.pdf)
+Original source chapters:
+- Complete regulatory text
+- Official formatting preserved
+- Full detail and footnotes
+- Legal reference (~150-230 KB)
+- Authoritative source
+:::
+
+::: {.column width="33%"}
+### 📝 Markdown Files (.md)
+AI-generated summaries:
+- Version control friendly
+- Easy editing and conversion
+- Key points extracted
+- Lightweight (~3-5 KB)
+- GitHub integration
+:::
+
+::: {.column width="34%"}
+### 📄 Word Documents (.docx)
+Formatted summaries:
+- Professional presentation
+- Track changes support
+- Print-ready summaries
+- Stakeholder sharing (~38 KB)
+- Corporate use
+:::
+::::
+
+## Implementation Roadmap
+
+Based on the relevance assessment, here's a suggested implementation approach:
+
+1. **Phase 1 - Essential Chapters** (Q1)
+   - Focus on chapters with score 8/10
+   - Direct implementation with minimal changes
+   - Core banking supervision frameworks
+
+2. **Phase 2 - Important Chapters** (Q2-Q3)
+   - Adapt to Nigerian banking context
+   - Customize for local market conditions
+   - Integrate with existing CBN guidelines
+
+3. **Phase 3 - Optional Chapters** (As needed)
+   - Reference for specific regulatory gaps
+   - Cherry-pick relevant sections
+   - Use for comparative analysis
+
+---
+
+*Generated from UK FCA Consumer Credit Sourcebook analysis for CBN regulatory framework development.*
+
+*Last updated: `r Sys.Date()`*

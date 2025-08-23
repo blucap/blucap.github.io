@@ -1,0 +1,466 @@
+[
+  {
+    "relevance_score": 8,
+    "key_topics": [
+      "Fair treatment of customers",
+      "Consumer protection standards",
+      "Credit lending conduct requirements",
+      "Disclosure and transparency obligations",
+      "Vulnerable customer protection",
+      "Distance/digital banking standards",
+      "Sales practices and remuneration policies",
+      "Third-party broker regulations"
+    ],
+    "cbn_applications": [
+      "Adapt fair lending principles for Nigerian consumer credit regulations",
+      "Establish conduct standards for digital banking and mobile money operations",
+      "Create guidelines for protecting vulnerable customers in financial inclusion initiatives",
+      "Develop disclosure requirements for loan products and credit facilities",
+      "Set standards for agent banking and third-party credit intermediaries",
+      "Implement remuneration policies to prevent mis-selling of financial products",
+      "Establish e-commerce and distance marketing rules for digital financial services"
+    ],
+    "priority_level": "Essential",
+    "justification": "The conduct of business standards are highly relevant as they provide comprehensive frameworks for consumer protection, fair lending practices, and digital banking operations that are critical for CBN's supervision of banks and other financial institutions in Nigeria's evolving financial landscape.",
+    "chapter": "ch_02"
+  },
+  {
+    "relevance_score": 8,
+    "key_topics": [
+      "Pre-contractual disclosure requirements",
+      "Consumer protection standards",
+      "Credit intermediary regulations",
+      "Commission disclosure and prohibition",
+      "Risk warnings for secured lending",
+      "Adequate explanation requirements",
+      "Payment authority controls",
+      "Unfair business practice prevention"
+    ],
+    "cbn_applications": [
+      "Establish mandatory pre-contractual disclosure standards for Nigerian banks and financial institutions",
+      "Create consumer protection guidelines for retail lending products",
+      "Regulate credit intermediaries and brokers operating in Nigeria",
+      "Set transparency requirements for fees and commissions in lending",
+      "Develop risk warning frameworks for secured loans and mortgages",
+      "Implement controls on continuous payment authorities and direct debits",
+      "Define unfair lending practices and prohibition guidelines"
+    ],
+    "priority_level": "Essential",
+    "justification": "This chapter provides comprehensive consumer protection and disclosure frameworks that are directly applicable to CBN's mandate for banking supervision, prudential guidelines, and compliance procedures, particularly for retail banking operations.",
+    "chapter": "ch_04"
+  },
+  {
+    "relevance_score": 8,
+    "key_topics": [
+      "Consumer credit pricing regulations",
+      "Overdraft facility management",
+      "Interest rate caps and controls",
+      "Consumer protection measures",
+      "Fee structure transparency",
+      "Vulnerable customer protections",
+      "Compliance and enforcement mechanisms"
+    ],
+    "cbn_applications": [
+      "Establishing transparent pricing requirements for overdraft facilities in Nigerian banks",
+      "Setting regulatory caps on unarranged overdraft charges to protect consumers",
+      "Mandating simplified fee structures for better consumer understanding",
+      "Creating guidelines for treatment of vulnerable customers with overdraft debts",
+      "Defining compliance procedures for overdraft pricing changes",
+      "Establishing enforcement mechanisms for pricing violations"
+    ],
+    "priority_level": "Important",
+    "justification": "This chapter provides highly relevant regulatory framework for overdraft pricing that directly addresses consumer protection, compliance procedures, and prudential guidelines - all core components of the CBN rulebook, though it would need adaptation to Nigerian banking context.",
+    "chapter": "ch_05C"
+  },
+  {
+    "relevance_score": 8,
+    "key_topics": [
+      "Consumer credit monitoring",
+      "Overdraft facility management",
+      "Financial difficulty identification",
+      "Customer protection measures",
+      "Forbearance procedures",
+      "Reporting requirements",
+      "Risk monitoring systems"
+    ],
+    "cbn_applications": [
+      "Establishing overdraft monitoring requirements for Nigerian banks",
+      "Creating early warning systems for customer financial distress",
+      "Defining intervention protocols for vulnerable customers",
+      "Setting reporting standards for overdraft usage patterns",
+      "Developing forbearance guidelines aligned with Nigerian context",
+      "Implementing customer protection measures for retail banking"
+    ],
+    "priority_level": "Important",
+    "justification": "This chapter provides highly relevant frameworks for consumer protection, risk management, and prudential supervision of overdraft facilities, which are critical components of retail banking regulation that CBN needs to address in its rulebook.",
+    "chapter": "ch_05D"
+  },
+  {
+    "relevance_score": 8,
+    "key_topics": [
+      "Creditworthiness assessment frameworks",
+      "Responsible lending standards",
+      "Risk management in consumer credit",
+      "Compliance procedures for lending",
+      "Governance and record-keeping requirements",
+      "Vulnerable customer protection",
+      "P2P lending regulation"
+    ],
+    "cbn_applications": [
+      "Establishing mandatory creditworthiness assessment requirements for Nigerian banks",
+      "Developing prudential guidelines for consumer lending practices",
+      "Creating risk management frameworks for retail credit operations",
+      "Setting compliance procedures for loan origination and approval",
+      "Defining reporting standards for credit assessment documentation",
+      "Implementing consumer protection measures in lending activities",
+      "Regulating emerging lending platforms including digital and P2P lending"
+    ],
+    "priority_level": "Essential",
+    "justification": "This chapter provides comprehensive frameworks for responsible lending practices, creditworthiness assessments, and risk management procedures that are directly applicable to banking supervision and prudential guidelines required in the CBN rulebook.",
+    "chapter": "ch_05"
+  },
+  {
+    "relevance_score": 8,
+    "key_topics": [
+      "Post-credit agreement consumer protection requirements",
+      "Payment allocation and management rules",
+      "Credit card and revolving credit regulations",
+      "Persistent debt monitoring and intervention",
+      "Financial difficulty identification and forbearance",
+      "Refinancing restrictions and controls",
+      "Mandatory disclosure and notification requirements",
+      "Consumer refund rights and protections"
+    ],
+    "cbn_applications": [
+      "Develop post-disbursement monitoring requirements for Nigerian banks",
+      "Establish rules for credit card operations and minimum payment calculations",
+      "Create framework for identifying and assisting customers in financial distress",
+      "Set standards for overdraft facility management and disclosure",
+      "Define refinancing/loan restructuring guidelines and limits",
+      "Mandate customer notification procedures for credit limit changes",
+      "Establish payment allocation hierarchy for multiple credit facilities",
+      "Create persistent debt intervention requirements for revolving credit products"
+    ],
+    "priority_level": "Essential",
+    "justification": "This chapter provides highly relevant frameworks for post-credit supervision, consumer protection, and risk management that directly align with CBN's mandate to ensure responsible lending practices and financial stability in Nigeria's banking sector.",
+    "chapter": "ch_06"
+  },
+  {
+    "relevance_score": 8,
+    "key_topics": [
+      "Debt recovery and collection procedures",
+      "Customer forbearance and restructuring",
+      "Vulnerable customer protection",
+      "Communication standards for arrears management",
+      "Enforcement and repossession guidelines",
+      "Continuous payment authorities",
+      "Financial difficulty assessment frameworks"
+    ],
+    "cbn_applications": [
+      "Establishing guidelines for Nigerian banks on non-performing loan management and recovery",
+      "Creating forbearance frameworks for restructuring distressed loans",
+      "Setting standards for customer treatment during debt collection",
+      "Developing vulnerable customer protection protocols for financial hardship cases",
+      "Defining acceptable debt recovery practices and communication standards",
+      "Establishing requirements for sustainable repayment arrangements"
+    ],
+    "priority_level": "Important",
+    "justification": "This chapter provides highly relevant frameworks for managing distressed assets and customer arrears, which are critical for Nigerian banking supervision, though it would need adaptation to reflect local legal frameworks, cultural contexts, and CBN's specific regulatory priorities.",
+    "chapter": "ch_07A"
+  },
+  {
+    "relevance_score": 8,
+    "key_topics": [
+      "Prudential requirements and capital adequacy",
+      "Solvency requirements",
+      "Financial resources calculation methodology",
+      "Eligible capital components",
+      "Subordinated debt requirements",
+      "Regulatory reporting and notification requirements",
+      "Client money protection"
+    ],
+    "cbn_applications": [
+      "Adapt the tiered calculation methodology for Nigerian financial institutions' capital requirements",
+      "Use the eligible prudential resources framework for defining acceptable capital instruments",
+      "Apply the subordinated loan requirements structure for Tier 2 capital instruments",
+      "Implement similar solvency monitoring and reporting requirements for banks",
+      "Adapt the recalculation triggers for dynamic capital adequacy assessments",
+      "Use the deduction items list for regulatory capital calculations"
+    ],
+    "priority_level": "Essential",
+    "justification": "This chapter provides a comprehensive framework for prudential requirements, capital adequacy calculations, and eligible capital definitions that are directly applicable to CBN's banking supervision and capital requirements mandate, though it would need adaptation from debt management firms to banking institutions.",
+    "chapter": "ch_10"
+  },
+  {
+    "relevance_score": 7,
+    "key_topics": [
+      "Financial promotions and marketing standards",
+      "Consumer protection in credit advertising",
+      "Disclosure requirements for financial products",
+      "Risk warnings and APR display requirements",
+      "Prohibited marketing practices",
+      "Digital/online promotion regulations",
+      "Sector-specific communication requirements"
+    ],
+    "cbn_applications": [
+      "Establishing standards for bank marketing and advertising of credit products",
+      "Creating mandatory disclosure requirements for loan products and interest rates",
+      "Setting guidelines for digital banking promotions and mobile money services",
+      "Developing consumer protection frameworks for financial product marketing",
+      "Defining prohibited practices in financial services advertising",
+      "Establishing requirements for transparent communication of fees and charges"
+    ],
+    "priority_level": "Important",
+    "justification": "While focused on UK consumer credit, the comprehensive framework for financial promotions, disclosure requirements, and consumer protection principles are highly transferable to CBN's regulatory needs for ensuring transparent and fair banking practices in Nigeria.",
+    "chapter": "ch_03"
+  },
+  {
+    "relevance_score": 7,
+    "key_topics": [
+      "Consumer credit cost caps",
+      "Interest rate limitations",
+      "Default charge restrictions",
+      "Refinancing regulations",
+      "Borrower protection mechanisms",
+      "Enforcement of lending limits",
+      "Prohibited lending practices"
+    ],
+    "cbn_applications": [
+      "Establishing interest rate caps for microfinance banks and consumer lending",
+      "Setting maximum default charges for retail banking products",
+      "Creating consumer protection framework for digital lending platforms",
+      "Defining prohibited practices in consumer credit markets",
+      "Establishing enforcement mechanisms for non-compliant lending",
+      "Regulating loan refinancing and restructuring practices",
+      "Setting guidelines for calculation of lending charges and fees"
+    ],
+    "priority_level": "Important",
+    "justification": "While focused on UK high-cost short-term credit, this framework provides highly relevant regulatory models for consumer protection, interest rate caps, and predatory lending prevention that are critical issues in Nigerian banking supervision, particularly for microfinance and digital lending sectors.",
+    "chapter": "ch_05A"
+  },
+  {
+    "relevance_score": 7,
+    "key_topics": [
+      "Debt recovery procedures",
+      "Treatment of vulnerable customers",
+      "Disclosure and transparency requirements",
+      "Data accuracy and record-keeping",
+      "Dispute resolution procedures",
+      "Third-party debt collection oversight",
+      "Customer protection in arrears situations"
+    ],
+    "cbn_applications": [
+      "Framework for banks' debt recovery and collection practices",
+      "Guidelines for treating customers in financial distress",
+      "Standards for outsourcing debt collection to third parties",
+      "Requirements for accurate credit reporting to credit bureaus",
+      "Dispute resolution procedures for contested debts",
+      "Consumer protection rules for loan arrears management",
+      "Compliance requirements for fair debt collection practices"
+    ],
+    "priority_level": "Important",
+    "justification": "While focused on UK consumer credit regulations, this chapter provides comprehensive frameworks for debt recovery, vulnerable customer protection, and fair lending practices that are directly applicable to CBN's supervision of banks' consumer lending and collection activities.",
+    "chapter": "ch_07B"
+  },
+  {
+    "relevance_score": 7,
+    "key_topics": [
+      "Consumer protection in credit agreements",
+      "Distance contract cancellation rights",
+      "Cooling-off periods for financial products",
+      "P2P lending regulations",
+      "Disclosure requirements",
+      "Record keeping obligations"
+    ],
+    "cbn_applications": [
+      "Establishing cooling-off periods for digital/remote banking products",
+      "Setting consumer protection standards for online credit facilities",
+      "Defining cancellation procedures for distance-sold financial products",
+      "Creating P2P lending regulatory framework",
+      "Mandating disclosure requirements for consumer rights",
+      "Establishing record-keeping requirements for cancelled transactions"
+    ],
+    "priority_level": "Important",
+    "justification": "The chapter provides valuable consumer protection frameworks and cancellation procedures that are directly applicable to CBN's mandate for banking supervision and consumer protection, particularly relevant as Nigeria expands digital banking and P2P lending services.",
+    "chapter": "ch_11"
+  },
+  {
+    "relevance_score": 7,
+    "key_topics": [
+      "Agent appointment requirements",
+      "Third-party oversight and control",
+      "Liability and responsibility frameworks",
+      "Compliance procedures for intermediaries",
+      "Conflict of interest management",
+      "Customer disclosure requirements"
+    ],
+    "cbn_applications": [
+      "Regulating bank agents and correspondent banking relationships",
+      "Oversight of mobile money agents and financial inclusion intermediaries",
+      "Framework for third-party service providers in digital banking",
+      "Requirements for loan recovery agents",
+      "Standards for bank marketing and sales agents",
+      "Controls for outsourced banking functions"
+    ],
+    "priority_level": "Important",
+    "justification": "Agent banking is crucial for financial inclusion in Nigeria, and this framework provides comprehensive guidelines for managing third-party relationships, ensuring accountability, and protecting consumers in extended banking networks.",
+    "chapter": "ch_14"
+  },
+  {
+    "relevance_score": 7,
+    "key_topics": [
+      "Secured lending requirements",
+      "Pre-agreement disclosure standards",
+      "Customer protection measures",
+      "Creditworthiness assessment",
+      "Fee and charge transparency",
+      "Variable rate regulations",
+      "Early repayment provisions",
+      "Default and recovery procedures"
+    ],
+    "cbn_applications": [
+      "Adapt for Nigerian mortgage and secured lending supervision",
+      "Establish disclosure requirements for collateralized loans",
+      "Create customer protection framework for property-secured credit",
+      "Define standards for creditworthiness assessments in secured lending",
+      "Regulate fee structures and early repayment terms for secured loans",
+      "Set guidelines for default management on secured credit facilities"
+    ],
+    "priority_level": "Important",
+    "justification": "While focused on consumer credit secured on land rather than core banking supervision, the chapter provides valuable frameworks for secured lending practices, disclosure standards, and customer protection that are directly applicable to CBN's oversight of banks offering mortgage and collateralized loan products in Nigeria.",
+    "chapter": "ch_15"
+  },
+  {
+    "relevance_score": 7,
+    "key_topics": [
+      "Total charge for credit calculation methodologies",
+      "APR standardization and transparency requirements",
+      "Consumer protection exemptions and waivers",
+      "Credit cost disclosure standards",
+      "High net worth and business lending exemptions",
+      "Mathematical formulas for interest rate calculations"
+    ],
+    "cbn_applications": [
+      "Standardizing APR calculation methods across Nigerian banks for consumer credit transparency",
+      "Establishing rules for what fees must be included/excluded in total credit cost disclosures",
+      "Creating exemption frameworks for sophisticated borrowers (high net worth individuals and businesses)",
+      "Setting mathematical standards for interest rate calculations in different credit products",
+      "Developing consumer protection waivers and disclosure requirements for special lending categories"
+    ],
+    "priority_level": "Important",
+    "justification": "While this UK-focused content provides valuable frameworks for credit cost transparency and consumer protection that align with CBN's prudential guidelines and risk management objectives, it would require significant adaptation to Nigerian banking context and regulations.",
+    "chapter": "ch_AX01pdf"
+  },
+  {
+    "relevance_score": 3,
+    "key_topics": [
+      "Consumer credit regulation",
+      "Financial difficulties indicators",
+      "Geographic scope of regulation",
+      "Regulatory framework structure",
+      "Credit-related activities supervision"
+    ],
+    "cbn_applications": [
+      "Framework for identifying financially distressed borrowers could inform CBN's risk management guidelines",
+      "Structure of specialized sourcebooks could guide CBN's regulatory documentation organization",
+      "Principles for treating vulnerable customers could enhance consumer protection provisions"
+    ],
+    "priority_level": "Optional",
+    "justification": "While this UK consumer credit framework offers some transferable concepts for identifying distressed borrowers and regulatory structure, it focuses primarily on consumer lending rather than the broader banking supervision and prudential requirements central to CBN's mandate.",
+    "chapter": "ch_01"
+  },
+  {
+    "relevance_score": 3,
+    "key_topics": [
+      "Debt counselling and adjustment services",
+      "Consumer protection in debt management",
+      "Fee transparency and restrictions",
+      "Vulnerable customer safeguards",
+      "Conflict of interest management",
+      "Lead generator oversight"
+    ],
+    "cbn_applications": [
+      "Adapt vulnerable customer protection principles for banking supervision guidelines",
+      "Incorporate conflict of interest management frameworks into prudential guidelines",
+      "Apply fee transparency requirements to bank charges and lending practices",
+      "Use assessment obligation principles for responsible lending standards"
+    ],
+    "priority_level": "Optional",
+    "justification": "While the consumer protection principles and conflict of interest management concepts have some transferable value, this chapter focuses on debt advice services which are not core to central banking supervision and prudential regulation.",
+    "chapter": "ch_08"
+  },
+  {
+    "relevance_score": 3,
+    "key_topics": [
+      "Consumer credit information disclosure",
+      "Borrower information rights",
+      "Documentation requirements for credit agreements",
+      "Enforcement restrictions for non-compliance",
+      "Third-party information requests"
+    ],
+    "cbn_applications": [
+      "Could inform requirements for banks to provide loan documentation to customers",
+      "Principles on maintaining accessible credit records could be adapted",
+      "Framework for handling third-party information requests could be referenced",
+      "Enforcement restrictions for non-compliance could inspire similar provisions"
+    ],
+    "priority_level": "Optional",
+    "justification": "While the chapter provides useful consumer protection principles that could inform CBN's approach to borrower rights and documentation standards, it is based on UK-specific legislation (CCA 1974) with limited direct applicability to Nigerian banking supervision and prudential regulation.",
+    "chapter": "ch_13"
+  },
+  {
+    "relevance_score": 3,
+    "key_topics": [
+      "Transitional provisions for regulatory changes",
+      "Record keeping requirements",
+      "Notification requirements to regulators",
+      "Consumer credit regulations",
+      "Phased implementation of new rules"
+    ],
+    "cbn_applications": [
+      "Framework for implementing transitional provisions when updating banking regulations",
+      "Template for record retention periods for various banking documents",
+      "Model for phased implementation of new prudential guidelines",
+      "Structure for notification requirements to CBN"
+    ],
+    "priority_level": "Optional",
+    "justification": "While the document provides useful templates for transitional provisions and record-keeping frameworks, it is specific to UK consumer credit regulations rather than Nigerian banking supervision and prudential standards.",
+    "chapter": "ch_AXTRpdf"
+  },
+  {
+    "relevance_score": 2,
+    "key_topics": [
+      "Consumer credit price caps",
+      "Rent-to-own agreements",
+      "Price benchmarking methodologies",
+      "Cost of credit limitations",
+      "Consumer protection in hire-purchase"
+    ],
+    "cbn_applications": [
+      "Could inform consumer credit regulations for hire-purchase and installment payment schemes offered by Nigerian banks",
+      "Benchmarking methodology could be adapted for pricing transparency requirements",
+      "Consumer protection principles could guide development of fair lending practices"
+    ],
+    "priority_level": "Optional",
+    "justification": "While the consumer protection principles and credit cost cap concepts have some tangential relevance to banking supervision, this chapter focuses on a specific retail credit product (rent-to-own) that is not a core banking activity regulated by central banks.",
+    "chapter": "ch_05B"
+  },
+  {
+    "relevance_score": 2,
+    "key_topics": [
+      "Interim permissions for credit activities",
+      "Transitional regulatory arrangements",
+      "Modified compliance requirements",
+      "Disapplied prudential rules",
+      "UK FCA-specific provisions"
+    ],
+    "cbn_applications": [
+      "Framework for transitional licensing periods when introducing new credit regulations",
+      "Model for phased implementation of regulatory requirements",
+      "Guidance on temporary permissions during regulatory reforms"
+    ],
+    "priority_level": "Optional",
+    "justification": "While the concept of interim permissions during regulatory transitions could inform CBN's approach to implementing new credit regulations, this chapter is highly specific to UK FCA procedures and lacks direct applicability to Nigerian banking supervision frameworks.",
+    "chapter": "ch_12"
+  }
+]
