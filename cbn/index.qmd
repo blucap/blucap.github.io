@@ -24,7 +24,7 @@ page-layout: article
 
 This page provides downloadable summaries of chapters from the [Consumer Credit Sourcebook](https://www.handbook.fca.org.uk/handbook/CONC.pdf) ([CONC](https://www.handbook.fca.org.uk/handbook/CONC/1/1.html)), analyzed for relevance to the Central Bank of Nigeria (CBN) regulatory framework.
 
-The entire CONC is over 400 pages, making it impractical to convert into a single CBN chapter. By breaking it into chapters and assessing relevance, the work can be prioritized effectively. Chapter 7 was split into two parts due to its size.
+The entire CONC is over 400 pages, making it tricky to convert into a single CBN chapter. By breaking it into chapters and assessing relevance, the work can be prioritized effectively. Chapter 7 was split into two parts due to its size.
 
 ```{r}
 #| label: setup
