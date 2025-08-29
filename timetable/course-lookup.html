@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -67,19 +33,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="course-lookup_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="course-lookup_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="course-lookup_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="course-lookup_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="course-lookup_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="course-lookup_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="course-lookup_files/libs/datatables-binding-0.33/datatables.js"></script>
-<script src="course-lookup_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="course-lookup_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="course-lookup_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="course-lookup_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-<link href="course-lookup_files/libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-<script src="course-lookup_files/libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 
 
-<link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="fullcontent">
@@ -107,94 +62,195 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="course-lookup" class="level2">
+<h2 class="anchored" data-anchor-id="course-lookup">Course Lookup</h2>
 <div class="cell">
-<style type="text/css">
-.search-panel {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #dee2e6;
-}
-
-.results-panel {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 20px;
-    border: 1px solid #dee2e6;
-}
-
-body {
-    background-color: #f8f9fa;
-}
-
-.form-control, .form-select {
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-#courseTable {
-    font-size: 14px;
-}
-
-.instructions-panel {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 20px;
-    margin-top: 20px;
-    border: 1px solid #dee2e6;
-}
-</style>
-</div>
-<div class="container-fluid">
+<div class="cell-output-display no-overflow-x">
 <div class="row">
 <div class="col-md-3">
-<section id="find-course" class="level3 search-panel">
-<h3 class="anchored" data-anchor-id="find-course">Find Course</h3>
-<p><strong>Enter Full Course Code:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"text"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"form-control"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"fullCourseCode"</span><span class="ot"> </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ot">       placeholder</span><span class="op">=</span><span class="st">"e.g., ACCY231 or mmpa502"</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="well">
+<h4 class="anchored">Find Course</h4>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="full_course_code-label" for="full_course_code">Enter Full Course Code:</label>
+<input id="full_course_code" type="text" class="shiny-input-text form-control" value="" placeholder="e.g., ACCY231 or mmpa502" data-update-on="change">
 </div>
 <hr>
-<p><strong>OR Select Step by Step:</strong></p>
-<p><strong>Course Prefix:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">select</span><span class="ot"> class</span><span class="op">=</span><span class="st">"form-select"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"coursePrefix"</span><span class="dt">&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">""</span><span class="dt">&gt;</span>Select...<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">select</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h5 class="anchored">OR Select Step by Step:</h5>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="course_prefix-label" for="course_prefix">Course Prefix:</label>
+<div>
+<select id="course_prefix" class="shiny-input-select"><option value="" selected="">Select...</option>
+<option value="ACCY">ACCY</option>
+<option value="ACTS">ACTS</option>
+<option value="AIML">AIML</option>
+<option value="ANFX">ANFX</option>
+<option value="ANTH">ANTH</option>
+<option value="ARCI">ARCI</option>
+<option value="ARTH">ARTH</option>
+<option value="ARTS">ARTS</option>
+<option value="ASIA">ASIA</option>
+<option value="BCOM">BCOM</option>
+<option value="BILD">BILD</option>
+<option value="BIOl">BIOl</option>
+<option value="BIOL">BIOL</option>
+<option value="BMSC">BMSC</option>
+<option value="BTEC">BTEC</option>
+<option value="CCSP">CCSP</option>
+<option value="CGRA">CGRA</option>
+<option value="CHEM">CHEM</option>
+<option value="CHIN">CHIN</option>
+<option value="CLAS">CLAS</option>
+<option value="CLNR">CLNR</option>
+<option value="CMPO">CMPO</option>
+<option value="COGS">COGS</option>
+<option value="COMD">COMD</option>
+<option value="COML">COML</option>
+<option value="COMP">COMP</option>
+<option value="COMS">COMS</option>
+<option value="CONM">CONM</option>
+<option value="CPSY">CPSY</option>
+<option value="CREW">CREW</option>
+<option value="CRIM">CRIM</option>
+<option value="CYBR">CYBR</option>
+<option value="DATA">DATA</option>
+<option value="DEAF">DEAF</option>
+<option value="DEVE">DEVE</option>
+<option value="DSDN">DSDN</option>
+<option value="ECON">ECON</option>
+<option value="EDUC">EDUC</option>
+<option value="EEEN">EEEN</option>
+<option value="EHUM">EHUM</option>
+<option value="ELIN">ELIN</option>
+<option value="EMBA">EMBA</option>
+<option value="ENGL">ENGL</option>
+<option value="ENGR">ENGR</option>
+<option value="ENSC">ENSC</option>
+<option value="ENTR">ENTR</option>
+<option value="ENVI">ENVI</option>
+<option value="EPSY">EPSY</option>
+<option value="ERES">ERES</option>
+<option value="FADN">FADN</option>
+<option value="FCOM">FCOM</option>
+<option value="FHSS">FHSS</option>
+<option value="FILM">FILM</option>
+<option value="FINA">FINA</option>
+<option value="FPSY">FPSY</option>
+<option value="FREN">FREN</option>
+<option value="GAME">GAME</option>
+<option value="GBUS">GBUS</option>
+<option value="GEOG">GEOG</option>
+<option value="GEOS">GEOS</option>
+<option value="GERM">GERM</option>
+<option value="GLBL">GLBL</option>
+<option value="GOVT">GOVT</option>
+<option value="GREE">GREE</option>
+<option value="HEAL">HEAL</option>
+<option value="HIST">HIST</option>
+<option value="HLTH">HLTH</option>
+<option value="HLWB">HLWB</option>
+<option value="HPSY">HPSY</option>
+<option value="HRER">HRER</option>
+<option value="IBUS">IBUS</option>
+<option value="ICOM">ICOM</option>
+<option value="INDN">INDN</option>
+<option value="INFM">INFM</option>
+<option value="INFO">INFO</option>
+<option value="INTA">INTA</option>
+<option value="INTP">INTP</option>
+<option value="ITRA">ITRA</option>
+<option value="IXXN">IXXN</option>
+<option value="JAPA">JAPA</option>
+<option value="LALS">LALS</option>
+<option value="LAND">LAND</option>
+<option value="LANG">LANG</option>
+<option value="LATI">LATI</option>
+<option value="LAWS">LAWS</option>
+<option value="LCCM">LCCM</option>
+<option value="LING">LING</option>
+<option value="LSCI">LSCI</option>
+<option value="MAOR">MAOR</option>
+<option value="MARK">MARK</option>
+<option value="MATH">MATH</option>
+<option value="MBIO">MBIO</option>
+<option value="MBUA">MBUA</option>
+<option value="MDDN">MDDN</option>
+<option value="MDIA">MDIA</option>
+<option value="MECA">MECA</option>
+<option value="MGMT">MGMT</option>
+<option value="MHST">MHST</option>
+<option value="MIDW">MIDW</option>
+<option value="MMBA">MMBA</option>
+<option value="MMPA">MMPA</option>
+<option value="MSSL">MSSL</option>
+<option value="MUSC">MUSC</option>
+<option value="NRSE">NRSE</option>
+<option value="NURS">NURS</option>
+<option value="NWEN">NWEN</option>
+<option value="NZSL">NZSL</option>
+<option value="NZSM">NZSM</option>
+<option value="PAAH">PAAH</option>
+<option value="PADM">PADM</option>
+<option value="PASI">PASI</option>
+<option value="PASP">PASP</option>
+<option value="PCOM">PCOM</option>
+<option value="PECO">PECO</option>
+<option value="PERF">PERF</option>
+<option value="PHIL">PHIL</option>
+<option value="PHPE">PHPE</option>
+<option value="PHYG">PHYG</option>
+<option value="PHYS">PHYS</option>
+<option value="PLAN">PLAN</option>
+<option value="POLI">POLI</option>
+<option value="POLS">POLS</option>
+<option value="POPM">POPM</option>
+<option value="PSIR">PSIR</option>
+<option value="PSYC">PSYC</option>
+<option value="PUBL">PUBL</option>
+<option value="QUAN">QUAN</option>
+<option value="RELI">RELI</option>
+<option value="RESE">RESE</option>
+<option value="SACS">SACS</option>
+<option value="SAMO">SAMO</option>
+<option value="SARC">SARC</option>
+<option value="SCIE">SCIE</option>
+<option value="SCIS">SCIS</option>
+<option value="SIDN">SIDN</option>
+<option value="SOSC">SOSC</option>
+<option value="SPAN">SPAN</option>
+<option value="SPCE">SPCE</option>
+<option value="SPOL">SPOL</option>
+<option value="STAT">STAT</option>
+<option value="STRA">STRA</option>
+<option value="SWEN">SWEN</option>
+<option value="TAXN">TAXN</option>
+<option value="TCHG">TCHG</option>
+<option value="THEA">THEA</option>
+<option value="TOUR">TOUR</option>
+<option value="UXDN">UXDN</option>
+<option value="WRIT">WRIT</option></select>
+<script type="application/json" data-for="course_prefix">{"plugins":["selectize-plugin-a11y"]}</script>
 </div>
-<p><strong>Course Number:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">select</span><span class="ot"> class</span><span class="op">=</span><span class="st">"form-select"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"courseNumber"</span><span class="ot"> disabled</span><span class="dt">&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">option</span><span class="ot"> value</span><span class="op">=</span><span class="st">""</span><span class="dt">&gt;</span>Select...<span class="dt">&lt;/</span><span class="kw">option</span><span class="dt">&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">select</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
+<div class="shiny-panel-conditional" data-display-if="input.course_prefix != ''" data-ns-prefix="">
+<div class="form-group shiny-input-container">
+<label class="control-label" id="course_number-label" for="course_number">Course Number:</label>
+<div>
+<select id="course_number" class="shiny-input-select"><option value="" selected="">Select...</option></select>
+<script type="application/json" data-for="course_number">{"plugins":["selectize-plugin-a11y"]}</script>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="col-md-9">
-<section id="courseHeader" class="level3 results-panel">
-<h3 class="anchored" data-anchor-id="courseHeader">Course Information</h3>
-<div id="tableContainer">
-<div class="cell">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="courseTable" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="courseTable">{"x":{"filter":"none","vertical":false,"data":[[],[],[],[],[],[],[],[]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>CRN<\/th>\n      <th>Type<\/th>\n      <th>Students<\/th>\n      <th>Dates<\/th>\n      <th>Room<\/th>\n      <th>Start<\/th>\n      <th>Finish<\/th>\n      <th>Days<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","pageLength":-1,"scrollX":true,"columnDefs":[{"targets":3,"width":"120px"},{"name":"CRN","targets":0},{"name":"Type","targets":1},{"name":"Students","targets":2},{"name":"Dates","targets":3},{"name":"Room","targets":4},{"name":"Start","targets":5},{"name":"Finish","targets":6},{"name":"Days","targets":7}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[-1,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="course_header" class="shiny-html-output"></div>
+<div class="datatables html-widget html-widget-output shiny-report-size html-fill-item" id="course_info" style="width:100%;height:auto;"></div>
 </div>
-</div>
-<div id="noResults" style="display: none;">
-<div class="alert alert-info">
-<p>No course information found. Please check the course code.</p>
 </div>
 </div>
 </div>
 </section>
-</div>
-</div>
-<section id="instructions" class="level2 instructions-panel">
+<section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
 <p><strong>Two ways to find your course:</strong></p>
 <p><strong>Option 1 - Quick Search:</strong> Type the full course code directly (e.g., ACCY231, mmpa502, BILD101)</p>
@@ -214,161 +270,155 @@ body {
 <li><strong>Start/Finish:</strong> Class times</li>
 <li><strong>Days:</strong> Days of the week the class meets</li>
 </ul>
-<p><em>Data from: 2026 Academic Timetable - DRAFT 1 - 20250827</em></p>
-</section>
-</div>
-<div class="cell">
-<script>
-// Pass R data to JavaScript
-const timetableData = `r toJSON(timetable_df, pretty = FALSE)`;
-const coursePrefixes = `r toJSON(unique_prefixes, pretty = FALSE)`;
+<p><em>Data from: 2026 Academic Timetable - DRAFT 1 - 20250827</em> 
+<script type="application/shiny-prerendered" data-context="server-start">
+library(shiny)
+library(jsonlite)
+library(dplyr)
+library(DT)
 
-// Parse the JSON data
-const data = JSON.parse(timetableData);
-const prefixes = JSON.parse(coursePrefixes);
+# Read the timetable data
+timetable_data <- fromJSON("timetable_data.json")
+timetable_df <- as.data.frame(timetable_data)
 
-// Initialize interface when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    initializeInterface();
-});
+# Extract course prefixes and numbers for two-step selection
+timetable_df$course_prefix <- substr(timetable_df$course, 1, 4)
+timetable_df$course_number <- substr(timetable_df$course, 5, nchar(timetable_df$course))
 
-function initializeInterface() {
-    // Populate course prefixes
-    const prefixSelect = document.getElementById('coursePrefix');
-    prefixes.forEach(prefix => {
-        const option = document.createElement('option');
-        option.value = prefix;
-        option.textContent = prefix;
-        prefixSelect.appendChild(option);
-    });
-
-    // Event listeners
-    document.getElementById('fullCourseCode').addEventListener('input', handleFullCourseInput);
-    document.getElementById('coursePrefix').addEventListener('change', handlePrefixChange);
-    document.getElementById('courseNumber').addEventListener('change', handleNumberChange);
+# Get unique prefixes
+unique_prefixes <- sort(unique(timetable_df$course_prefix))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+# Update course number choices based on prefix selection
+observe({
+  if (!is.null(input$course_prefix) && input$course_prefix != "") {
+    available_numbers <- timetable_df %>%
+      filter(course_prefix == input$course_prefix) %>%
+      pull(course_number) %>%
+      unique() %>%
+      sort()
     
-    // Initialize header
-    updateHeader('Enter a course code or select from dropdowns to view timetable information');
-}
+    updateSelectInput(session, "course_number",
+                     choices = c("Select..." = "", available_numbers))
+  }
+})
 
-function handleFullCourseInput() {
-    const fullCode = document.getElementById('fullCourseCode').value.trim();
-    
-    if (fullCode) {
-        // Clear dropdowns
-        document.getElementById('coursePrefix').value = '';
-        document.getElementById('courseNumber').value = '';
-        document.getElementById('courseNumber').disabled = true;
-        
-        searchCourse(fullCode.toUpperCase());
-    } else {
-        clearResults();
+# Clear dropdown selections when full course code is entered
+observe({
+  if (!is.null(input$full_course_code) && nchar(input$full_course_code) > 0) {
+    updateSelectInput(session, "course_prefix", selected = "")
+    updateSelectInput(session, "course_number", selected = "")
+  }
+})
+
+# Clear full course code when dropdowns are used
+observe({
+  if (!is.null(input$course_prefix) && input$course_prefix != "") {
+    updateTextInput(session, "full_course_code", value = "")
+  }
+})
+
+# Get selected course from either method
+selected_course <- reactive({
+  # Priority to full course code input
+  if (!is.null(input$full_course_code) && nchar(input$full_course_code) > 0) {
+    return(toupper(trimws(input$full_course_code)))
+  }
+  
+  # Otherwise use dropdown selection
+  if (!is.null(input$course_prefix) && !is.null(input$course_number) && 
+      input$course_prefix != "" && input$course_number != "") {
+    return(paste0(input$course_prefix, input$course_number))
+  }
+  
+  return(NULL)
+})
+
+# Course information header
+output$course_header <- renderUI({
+  course <- selected_course()
+  if (!is.null(course)) {
+    h3(paste("Course Information for", course))
+  } else {
+    h3("Enter a course code or select from dropdowns to view timetable information")
+  }
+})
+
+# Display course information
+output$course_info <- renderDT({
+  selected_course_code <- selected_course()
+  req(selected_course_code)
+  
+  course_data <- timetable_df %>%
+    filter(course == selected_course_code) %>%
+    select(crn, type, stu, dates, room, start, finish, days) %>%
+    rename(
+      CRN = crn,
+      Type = type,
+      Students = stu,
+      Dates = dates,
+      Room = room,
+      Start = start,
+      Finish = finish,
+      Days = days
+    )
+  
+  if (nrow(course_data) > 0) {
+    datatable(course_data, 
+             options = list(
+               dom = 't',
+               pageLength = -1,
+               scrollX = TRUE,
+               columnDefs = list(
+                 list(targets = 3, width = '120px')
+               )
+             ),
+             rownames = FALSE)
+  } else {
+    data.frame(Message = "No course information found. Please check the course code.")
+  }
+})
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server-extras">
+ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
+  quos <- rlang::enquos(...)
+  vars <- rlang::list2(...)
+  nm <- names(vars)
+  if (is.null(nm)) {
+    nm <- rep_len("", length(vars))
+  }
+  mapply(function(q, nm, val) {
+    # Infer name, if possible
+    if (nm == "") {
+      tryCatch({
+        nm <- rlang::as_name(q)
+      }, error = function(e) {
+        code <- paste(collapse = "\n", deparse(rlang::f_rhs(q)))
+        stop("ojs_define() could not create a name for the argument: ", code)
+      })
     }
-}
-
-function handlePrefixChange() {
-    const prefix = document.getElementById('coursePrefix').value;
-    const numberSelect = document.getElementById('courseNumber');
-    
-    // Clear full course code input
-    document.getElementById('fullCourseCode').value = '';
-    
-    if (prefix) {
-        // Get available numbers for this prefix
-        const availableNumbers = [...new Set(
-            data
-                .filter(course => course.course.startsWith(prefix))
-                .map(course => course.course.substring(4))
-        )].sort();
-        
-        // Populate number dropdown
-        numberSelect.innerHTML = '<option value="">Select...</option>';
-        availableNumbers.forEach(number => {
-            const option = document.createElement('option');
-            option.value = number;
-            option.textContent = number;
-            numberSelect.appendChild(option);
-        });
-        
-        numberSelect.disabled = false;
-    } else {
-        numberSelect.innerHTML = '<option value="">Select...</option>';
-        numberSelect.disabled = true;
-        clearResults();
-    }
-}
-
-function handleNumberChange() {
-    const prefix = document.getElementById('coursePrefix').value;
-    const number = document.getElementById('courseNumber').value;
-    
-    if (prefix && number) {
-        searchCourse(prefix + number);
-    } else {
-        clearResults();
-    }
-}
-
-function searchCourse(courseCode) {
-    const matchingCourses = data.filter(course => 
-        course.course.toUpperCase() === courseCode.toUpperCase()
-    );
-    
-    if (matchingCourses.length > 0) {
-        updateHeader(`Course Information for ${courseCode.toUpperCase()}`);
-        updateTable(matchingCourses);
-        document.getElementById('noResults').style.display = 'none';
-    } else {
-        updateHeader(`No results found for ${courseCode.toUpperCase()}`);
-        clearTable();
-        document.getElementById('noResults').style.display = 'block';
-    }
-}
-
-function updateTable(courses) {
-    // Get the DataTable instance
-    const table = $('#courseTable').DataTable();
-    
-    // Clear and add new data
-    table.clear();
-    courses.forEach(course => {
-        table.row.add([
-            course.crn,
-            course.type,
-            course.stu,
-            course.dates,
-            course.room,
-            course.start,
-            course.finish,
-            course.days
-        ]);
-    });
-    table.draw();
-    
-    // Show table
-    document.getElementById('courseTable').style.display = 'table';
-}
-
-function clearTable() {
-    const table = $('#courseTable').DataTable();
-    table.clear().draw();
-    document.getElementById('courseTable').style.display = 'none';
-}
-
-function clearResults() {
-    updateHeader('Enter a course code or select from dropdowns to view timetable information');
-    clearTable();
-    document.getElementById('noResults').style.display = 'none';
-}
-
-function updateHeader(text) {
-    const header = document.querySelector('#courseHeader');
-    if (header) {
-        header.textContent = text;
-    }
+    .session$output[[nm]] <- val
+    outputOptions(.session$output, nm, suspendWhenHidden = FALSE)
+    .session$sendCustomMessage("ojs-export", list(name = nm))
+    NULL
+  }, quos, nm, vars, SIMPLIFY = FALSE, USE.NAMES = FALSE)
+  invisible()
 }
 </script>
-</div>
+</p>
+<!--html_preserve-->
+<script type="application/shiny-prerendered" data-context="dependencies">
+{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["selectize"]},{"type":"character","attributes":{},"value":["0.15.2"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www/shared/selectize"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/selectize.min.js","accessibility/js/selectize-plugin-a11y.min.js"]},{"type":"character","attributes":{},"value":["css/selectize.bootstrap3.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["shiny"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.11.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmltools-fill"]},{"type":"character","attributes":{},"value":["0.5.8.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["fill"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["fill.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmltools"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.5.8.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"character","attributes":{},"value":["1.6.4"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["htmlwidgets"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.6.4"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["datatables-css"]},{"type":"character","attributes":{},"value":["0.0.0"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets/css"]}]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["datatables-crosstalk.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["DT"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["0.33"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["datatables-binding"]},{"type":"character","attributes":{},"value":["0.33"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["htmlwidgets"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["datatables.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["DT"]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["0.33"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["jquery"]},{"type":"character","attributes":{},"value":["3.5.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["lib/jquery"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["jquery.min.js"]},{"type":"NULL"},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["crosstalk"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.2.1"]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","version","src","meta","script","stylesheet","head","attachment","package","all_files","pkgVersion"]},"class":{"type":"character","attributes":{},"value":["html_dependency"]}},"value":[{"type":"character","attributes":{},"value":["crosstalk"]},{"type":"character","attributes":{},"value":["1.2.1"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["file"]}},"value":[{"type":"character","attributes":{},"value":["www"]}]},{"type":"NULL"},{"type":"character","attributes":{},"value":["js/crosstalk.min.js"]},{"type":"character","attributes":{},"value":["css/crosstalk.min.css"]},{"type":"NULL"},{"type":"NULL"},{"type":"character","attributes":{},"value":["crosstalk"]},{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["1.2.1"]}]}]}
+</script>
+<!--/html_preserve-->
+<!--html_preserve-->
+<script type="application/shiny-prerendered" data-context="execution_dependencies">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47]}},"value":[{"type":"character","attributes":{},"value":["base","bslib","cachem","cli","compiler","crosstalk","datasets","digest","dplyr","DT","evaluate","fastmap","generics","glue","graphics","grDevices","htmltools","htmlwidgets","httpuv","jquerylib","jsonlite","knitr","later","lifecycle","magrittr","memoise","methods","mime","pillar","pkgconfig","promises","R6","Rcpp","rlang","rmarkdown","rstudioapi","sass","shiny","stats","tibble","tidyselect","tools","utils","vctrs","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["4.5.1","0.9.0","1.1.0","3.6.5","4.5.1","1.2.1","4.5.1","0.6.37","1.1.4","0.33","0.19","1.2.0","0.1.3","1.6.2","4.5.1","4.5.1","0.5.8.1","1.6.4","1.6.16","0.1.4","1.8.4","1.50","1.4.2","1.0.4","2.0.3","2.0.1","4.5.1","0.12","1.11.0","2.0.3","1.3.3","2.5.1","1.1.0","1.1.6","2.29","0.17.1","0.4.10","1.11.1","4.5.1","3.3.0","1.2.1","4.5.1","4.5.1","0.6.5","0.52","1.8-4","2.3.6"]}]}]}
+</script>
+<!--/html_preserve-->
+</section>
 
 </main>
 <!-- /main column -->

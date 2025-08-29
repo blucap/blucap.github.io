@@ -5,7 +5,7 @@ account: cetier
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 15299297
-bundleId: 10833766
+bundleId: 10833872
 url: https://cetier.shinyapps.io/course-lookup/
 version: 1
 quarto_version: 1.5.57
