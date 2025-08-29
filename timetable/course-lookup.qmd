@@ -1,162 +1,149 @@
 ---
 title: "2026 Academic Timetable Course Lookup"
-format: html
-server: shiny
+format: 
+  html:
+    theme: bootstrap
+    css: custom.css
+    toc: false
 ---
 
-```{r}
-#| context: setup
-#| include: false
-
-library(shiny)
+```{r setup, include=FALSE}
 library(jsonlite)
 library(dplyr)
 library(DT)
+library(htmltools)
 
 # Read the timetable data
 timetable_data <- fromJSON("timetable_data.json")
 timetable_df <- as.data.frame(timetable_data)
 
-# Extract course prefixes and numbers for two-step selection
-timetable_df$course_prefix <- substr(timetable_df$course, 1, 4)
-timetable_df$course_number <- substr(timetable_df$course, 5, nchar(timetable_df$course))
-
-# Get unique prefixes
-unique_prefixes <- sort(unique(timetable_df$course_prefix))
+# Extract course prefixes for dropdown
+unique_prefixes <- sort(unique(substr(timetable_df$course, 1, 4)))
 ```
 
-```{r}
-#| context: server
+```{css, echo=FALSE}
+.search-panel {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+}
 
-# Update course number choices based on prefix selection
-observe({
-  if (!is.null(input$course_prefix) && input$course_prefix != "") {
-    available_numbers <- timetable_df %>%
-      filter(course_prefix == input$course_prefix) %>%
-      pull(course_number) %>%
-      unique() %>%
-      sort()
-    
-    updateSelectInput(session, "course_number",
-                     choices = c("Select..." = "", available_numbers))
-  }
-})
+.results-panel {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    border: 1px solid #dee2e6;
+}
 
-# Clear dropdown selections when full course code is entered
-observe({
-  if (!is.null(input$full_course_code) && nchar(input$full_course_code) > 0) {
-    updateSelectInput(session, "course_prefix", selected = "")
-    updateSelectInput(session, "course_number", selected = "")
-  }
-})
+body {
+    background-color: #f8f9fa;
+}
 
-# Clear full course code when dropdowns are used
-observe({
-  if (!is.null(input$course_prefix) && input$course_prefix != "") {
-    updateTextInput(session, "full_course_code", value = "")
-  }
-})
+.form-control, .form-select {
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
 
-# Get selected course from either method
-selected_course <- reactive({
-  # Priority to full course code input
-  if (!is.null(input$full_course_code) && nchar(input$full_course_code) > 0) {
-    return(toupper(trimws(input$full_course_code)))
-  }
-  
-  # Otherwise use dropdown selection
-  if (!is.null(input$course_prefix) && !is.null(input$course_number) && 
-      input$course_prefix != "" && input$course_number != "") {
-    return(paste0(input$course_prefix, input$course_number))
-  }
-  
-  return(NULL)
-})
+#courseTable {
+    font-size: 14px;
+}
 
-# Course information header
-output$course_header <- renderUI({
-  course <- selected_course()
-  if (!is.null(course)) {
-    h3(paste("Course Information for", course))
-  } else {
-    h3("Enter a course code or select from dropdowns to view timetable information")
-  }
-})
-
-# Display course information
-output$course_info <- renderDT({
-  selected_course_code <- selected_course()
-  req(selected_course_code)
-  
-  course_data <- timetable_df %>%
-    filter(course == selected_course_code) %>%
-    select(crn, type, stu, dates, room, start, finish, days) %>%
-    rename(
-      CRN = crn,
-      Type = type,
-      Students = stu,
-      Dates = dates,
-      Room = room,
-      Start = start,
-      Finish = finish,
-      Days = days
-    )
-  
-  if (nrow(course_data) > 0) {
-    datatable(course_data, 
-             options = list(
-               dom = 't',
-               pageLength = -1,
-               scrollX = TRUE
-             ),
-             rownames = FALSE)
-  } else {
-    data.frame(Message = "No course information found. Please check the course code.")
-  }
-})
+.instructions-panel {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+}
 ```
 
-## Course Lookup
+::: {.container-fluid}
 
-```{r}
-#| echo: false
+::: {.row}
 
-# Sidebar with inputs
-div(class = "row",
-  div(class = "col-md-3",
-    wellPanel(
-      h4("Find Course"),
-      
-      # Option 1: Quick search by full course code
-      textInput("full_course_code", 
-               "Enter Full Course Code:", 
-               placeholder = "e.g., ACCY231 or mmpa502"),
-      
-      hr(),
-      
-      h5("OR Select Step by Step:"),
-      
-      # Option 2: Two-step selection
-      selectInput("course_prefix", 
-                 "Course Prefix:", 
-                 choices = c("Select..." = "", unique_prefixes)),
-      
-      conditionalPanel(
-        condition = "input.course_prefix != ''",
-        selectInput("course_number", 
-                   "Course Number:", 
-                   choices = c("Select..." = ""))
-      )
+::: {.col-md-3}
+::: {.search-panel}
+
+### Find Course
+
+**Enter Full Course Code:**
+```{html}
+<input type="text" class="form-control" id="fullCourseCode" 
+       placeholder="e.g., ACCY231 or mmpa502">
+```
+
+---
+
+**OR Select Step by Step:**
+
+**Course Prefix:**
+```{html}
+<select class="form-select" id="coursePrefix">
+    <option value="">Select...</option>
+</select>
+```
+
+**Course Number:**
+```{html}
+<select class="form-select" id="courseNumber" disabled>
+    <option value="">Select...</option>
+</select>
+```
+
+:::
+:::
+
+::: {.col-md-9}
+::: {.results-panel}
+
+### Course Information {#courseHeader}
+
+::: {#tableContainer}
+```{r, echo=FALSE}
+# Create empty datatable that will be populated by JavaScript
+datatable(
+  data.frame(
+    CRN = character(0),
+    Type = character(0), 
+    Students = character(0),
+    Dates = character(0),
+    Room = character(0),
+    Start = character(0),
+    Finish = character(0),
+    Days = character(0)
+  ),
+  options = list(
+    dom = 't',
+    pageLength = -1,
+    scrollX = TRUE,
+    columnDefs = list(
+      list(targets = 3, width = '120px') # Make Dates column wider
     )
   ),
-  
-  # Main panel with results
-  div(class = "col-md-9",
-    uiOutput("course_header"),
-    DTOutput("course_info")
-  )
+  rownames = FALSE,
+  elementId = "courseTable"
 )
 ```
+
+::: {#noResults style="display: none;"}
+::: {.alert .alert-info}
+No course information found. Please check the course code.
+:::
+:::
+
+:::
+
+:::
+:::
+
+:::
+
+::: {.instructions-panel}
 
 ## Instructions
 
@@ -165,16 +152,173 @@ div(class = "row",
 **Option 1 - Quick Search:** Type the full course code directly (e.g., ACCY231, mmpa502, BILD101)
 
 **Option 2 - Step by Step:**
-1. **Select Course Prefix**: Choose the first four characters (e.g., ACCY, MMPA, BILD)  
-2. **Select Course Number**: Choose from available numbers for that prefix
+
+1. **Select Course Prefix:** Choose the first four characters (e.g., ACCY, MMPA, BILD)  
+2. **Select Course Number:** Choose from available numbers for that prefix
 
 **Results show all sections for your course with:**
-   - **CRN**: Course Reference Number
-   - **Type**: Class type (Lecture, Tutorial, etc.)
-   - **Students**: Enrollment capacity
-   - **Dates**: When the course runs
-   - **Room**: Location
-   - **Start/Finish**: Class times
-   - **Days**: Days of the week the class meets
+
+- **CRN:** Course Reference Number
+- **Type:** Class type (Lecture, Tutorial, etc.)
+- **Students:** Enrollment capacity
+- **Dates:** When the course runs
+- **Room:** Location
+- **Start/Finish:** Class times
+- **Days:** Days of the week the class meets
 
 *Data from: 2026 Academic Timetable - DRAFT 1 - 20250827*
+
+:::
+
+:::
+
+```{js, echo=FALSE}
+// Pass R data to JavaScript
+const timetableData = `r toJSON(timetable_df, pretty = FALSE)`;
+const coursePrefixes = `r toJSON(unique_prefixes, pretty = FALSE)`;
+
+// Parse the JSON data
+const data = JSON.parse(timetableData);
+const prefixes = JSON.parse(coursePrefixes);
+
+// Initialize interface when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initializeInterface();
+});
+
+function initializeInterface() {
+    // Populate course prefixes
+    const prefixSelect = document.getElementById('coursePrefix');
+    prefixes.forEach(prefix => {
+        const option = document.createElement('option');
+        option.value = prefix;
+        option.textContent = prefix;
+        prefixSelect.appendChild(option);
+    });
+
+    // Event listeners
+    document.getElementById('fullCourseCode').addEventListener('input', handleFullCourseInput);
+    document.getElementById('coursePrefix').addEventListener('change', handlePrefixChange);
+    document.getElementById('courseNumber').addEventListener('change', handleNumberChange);
+    
+    // Initialize header
+    updateHeader('Enter a course code or select from dropdowns to view timetable information');
+}
+
+function handleFullCourseInput() {
+    const fullCode = document.getElementById('fullCourseCode').value.trim();
+    
+    if (fullCode) {
+        // Clear dropdowns
+        document.getElementById('coursePrefix').value = '';
+        document.getElementById('courseNumber').value = '';
+        document.getElementById('courseNumber').disabled = true;
+        
+        searchCourse(fullCode.toUpperCase());
+    } else {
+        clearResults();
+    }
+}
+
+function handlePrefixChange() {
+    const prefix = document.getElementById('coursePrefix').value;
+    const numberSelect = document.getElementById('courseNumber');
+    
+    // Clear full course code input
+    document.getElementById('fullCourseCode').value = '';
+    
+    if (prefix) {
+        // Get available numbers for this prefix
+        const availableNumbers = [...new Set(
+            data
+                .filter(course => course.course.startsWith(prefix))
+                .map(course => course.course.substring(4))
+        )].sort();
+        
+        // Populate number dropdown
+        numberSelect.innerHTML = '<option value="">Select...</option>';
+        availableNumbers.forEach(number => {
+            const option = document.createElement('option');
+            option.value = number;
+            option.textContent = number;
+            numberSelect.appendChild(option);
+        });
+        
+        numberSelect.disabled = false;
+    } else {
+        numberSelect.innerHTML = '<option value="">Select...</option>';
+        numberSelect.disabled = true;
+        clearResults();
+    }
+}
+
+function handleNumberChange() {
+    const prefix = document.getElementById('coursePrefix').value;
+    const number = document.getElementById('courseNumber').value;
+    
+    if (prefix && number) {
+        searchCourse(prefix + number);
+    } else {
+        clearResults();
+    }
+}
+
+function searchCourse(courseCode) {
+    const matchingCourses = data.filter(course => 
+        course.course.toUpperCase() === courseCode.toUpperCase()
+    );
+    
+    if (matchingCourses.length > 0) {
+        updateHeader(`Course Information for ${courseCode.toUpperCase()}`);
+        updateTable(matchingCourses);
+        document.getElementById('noResults').style.display = 'none';
+    } else {
+        updateHeader(`No results found for ${courseCode.toUpperCase()}`);
+        clearTable();
+        document.getElementById('noResults').style.display = 'block';
+    }
+}
+
+function updateTable(courses) {
+    // Get the DataTable instance
+    const table = $('#courseTable').DataTable();
+    
+    // Clear and add new data
+    table.clear();
+    courses.forEach(course => {
+        table.row.add([
+            course.crn,
+            course.type,
+            course.stu,
+            course.dates,
+            course.room,
+            course.start,
+            course.finish,
+            course.days
+        ]);
+    });
+    table.draw();
+    
+    // Show table
+    document.getElementById('courseTable').style.display = 'table';
+}
+
+function clearTable() {
+    const table = $('#courseTable').DataTable();
+    table.clear().draw();
+    document.getElementById('courseTable').style.display = 'none';
+}
+
+function clearResults() {
+    updateHeader('Enter a course code or select from dropdowns to view timetable information');
+    clearTable();
+    document.getElementById('noResults').style.display = 'none';
+}
+
+function updateHeader(text) {
+    const header = document.querySelector('#courseHeader');
+    if (header) {
+        header.textContent = text;
+    }
+}
+```
