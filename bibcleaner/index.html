@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BibTeX Reference Extractor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .upload-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .upload-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .upload-box {
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .upload-box:hover {
+            border-color: #667eea;
+            background: #f5f3ff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .upload-box.drag-over {
+            border-color: #764ba2;
+            background: #f5f3ff;
+        }
+
+        .upload-box.has-file {
+            border-color: #48bb78;
+            background: #f0fdf4;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .upload-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-label {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .file-label:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .file-info {
+            margin-top: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .file-info.success {
+            color: #48bb78;
+            font-weight: 500;
+        }
+
+        .options-section {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .options-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-wrapper label {
+            cursor: pointer;
+            color: #666;
+        }
+
+        .process-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .process-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .process-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .process-button.processing {
+            background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+        }
+
+        .results-section {
+            display: none;
+            margin-top: 30px;
+            padding: 25px;
+            background: #f0fdf4;
+            border-radius: 12px;
+            border: 2px solid #48bb78;
+        }
+
+        .results-title {
+            font-weight: 600;
+            color: #22543d;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .download-button {
+            padding: 12px 30px;
+            background: #48bb78;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .download-button:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+        }
+
+        .missing-refs {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff5f5;
+            border-radius: 8px;
+            border-left: 4px solid #fc8181;
+        }
+
+        .missing-refs h4 {
+            color: #c53030;
+            margin-bottom: 10px;
+        }
+
+        .missing-refs ul {
+            margin-left: 20px;
+            color: #e53e3e;
+        }
+
+        .error-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff5f5;
+            border-radius: 8px;
+            border-left: 4px solid #fc8181;
+            color: #c53030;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .preview-area {
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 BibTeX Reference Extractor</h1>
+            <p>Extract only the references you need from your BibTeX library</p>
+        </div>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <div class="upload-box" id="articleBox">
+                    <div class="upload-icon">📄</div>
+                    <label class="upload-label">LaTeX Article (.tex)</label>
+                    <input type="file" id="articleFile" class="file-input" accept=".tex">
+                    <label for="articleFile" class="file-label">Choose File</label>
+                    <div class="file-info" id="articleInfo">or drag and drop here</div>
+                </div>
+
+                <div class="upload-box" id="bibBox">
+                    <div class="upload-icon">📖</div>
+                    <label class="upload-label">BibTeX Library (.bib)</label>
+                    <input type="file" id="bibFile" class="file-input" accept=".bib">
+                    <label for="bibFile" class="file-label">Choose File</label>
+                    <div class="file-info" id="bibInfo">or drag and drop here</div>
+                </div>
+            </div>
+
+            <div class="options-section">
+                <div class="options-title">Options</div>
+                <div class="checkbox-group">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="articlesOnly">
+                        <label for="articlesOnly">Extract @article entries only</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="includeCrossref" checked>
+                        <label for="includeCrossref">Include crossref dependencies</label>
+                    </div>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="expandAbbrev" checked>
+                        <label for="expandAbbrev">Expand journal abbreviations</label>
+                    </div>
+                </div>
+            </div>
+
+            <button id="processButton" class="process-button" disabled>
+                Process Files
+            </button>
+
+            <div class="error-message" id="errorMessage"></div>
+
+            <div class="results-section" id="resultsSection">
+                <h3 class="results-title">✅ Extraction Complete!</h3>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalCitations">0</div>
+                        <div class="stat-label">Citations Found</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="extractedEntries">0</div>
+                        <div class="stat-label">Entries Extracted</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="missingEntries">0</div>
+                        <div class="stat-label">Missing Entries</div>
+                    </div>
+                </div>
+                <button id="downloadButton" class="download-button">
+                    📥 Download BibTeX File
+                </button>
+                <button id="previewButton" class="download-button" style="background: #805ad5;">
+                    👁️ Preview Output
+                </button>
+                <div class="missing-refs" id="missingRefs" style="display: none;">
+                    <h4>⚠️ Missing References</h4>
+                    <ul id="missingList"></ul>
+                </div>
+                <div class="preview-area" id="previewArea" style="display: none;"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Made with ❤️ for researchers | <a href="https://github.com" target="_blank">View on GitHub</a></p>
+        </div>
+    </div>
+
+    <script>
+        class BibTeXExtractor {
+            constructor() {
+                this.articleContent = null;
+                this.bibContent = null;
+                this.outputContent = null;
+                this.setupEventListeners();
+            }
+
+            setupEventListeners() {
+                // File inputs
+                document.getElementById('articleFile').addEventListener('change', (e) => this.handleFileSelect(e, 'article'));
+                document.getElementById('bibFile').addEventListener('change', (e) => this.handleFileSelect(e, 'bib'));
+
+                // Drag and drop
+                this.setupDragAndDrop('articleBox', 'article');
+                this.setupDragAndDrop('bibBox', 'bib');
+
+                // Process button
+                document.getElementById('processButton').addEventListener('click', () => this.processFiles());
+
+                // Download button
+                document.getElementById('downloadButton').addEventListener('click', () => this.downloadOutput());
+
+                // Preview button
+                document.getElementById('previewButton').addEventListener('click', () => this.togglePreview());
+            }
+
+            setupDragAndDrop(boxId, type) {
+                const box = document.getElementById(boxId);
+
+                box.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    box.classList.add('drag-over');
+                });
+
+                box.addEventListener('dragleave', () => {
+                    box.classList.remove('drag-over');
+                });
+
+                box.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    box.classList.remove('drag-over');
+
+                    const file = e.dataTransfer.files[0];
+                    if (file) {
+                        this.processFile(file, type);
+                    }
+                });
+            }
+
+            handleFileSelect(event, type) {
+                const file = event.target.files[0];
+                if (file) {
+                    this.processFile(file, type);
+                }
+            }
+
+            processFile(file, type) {
+                const reader = new FileReader();
+
+                reader.onload = (e) => {
+                    const content = e.target.result;
+
+                    if (type === 'article') {
+                        this.articleContent = content;
+                        document.getElementById('articleInfo').textContent = `✓ ${file.name} (${this.formatFileSize(file.size)})`;
+                        document.getElementById('articleInfo').classList.add('success');
+                        document.getElementById('articleBox').classList.add('has-file');
+                    } else {
+                        this.bibContent = content;
+                        document.getElementById('bibInfo').textContent = `✓ ${file.name} (${this.formatFileSize(file.size)})`;
+                        document.getElementById('bibInfo').classList.add('success');
+                        document.getElementById('bibBox').classList.add('has-file');
+                    }
+
+                    this.checkReady();
+                };
+
+                reader.readAsText(file);
+            }
+
+            formatFileSize(bytes) {
+                if (bytes < 1024) return bytes + ' bytes';
+                else if (bytes < 1048576) return Math.round(bytes / 1024) + ' KB';
+                else return Math.round(bytes / 1048576) + ' MB';
+            }
+
+            checkReady() {
+                const button = document.getElementById('processButton');
+                if (this.articleContent && this.bibContent) {
+                    button.disabled = false;
+                }
+            }
+
+            extractCitations(latexContent) {
+                const citations = new Set();
+
+                // Various citation patterns
+                const patterns = [
+                    /\\cite\{([^}]+)\}/g,
+                    /\\citep\{([^}]+)\}/g,
+                    /\\citet\{([^}]+)\}/g,
+                    /\\citealp\{([^}]+)\}/g,
+                    /\\citealt\{([^}]+)\}/g,
+                    /\\citeyear\{([^}]+)\}/g,
+                    /\\citeauthor\{([^}]+)\}/g,
+                    /\\nocite\{([^}]+)\}/g,
+                    /\\Cite\{([^}]+)\}/g,
+                    /\\parencite\{([^}]+)\}/g,
+                    /\\textcite\{([^}]+)\}/g
+                ];
+
+                patterns.forEach(pattern => {
+                    let match;
+                    while ((match = pattern.exec(latexContent)) !== null) {
+                        // Handle multiple citations in one command
+                        const keys = match[1].split(',').map(k => k.trim());
+                        keys.forEach(key => {
+                            if (key) citations.add(key);
+                        });
+                    }
+                });
+
+                return citations;
+            }
+
+            expandJournalAbbreviations(content) {
+                if (!document.getElementById('expandAbbrev').checked) {
+                    return content;
+                }
+
+                // Find all @string definitions
+                const stringPattern = /@string\s*\{(\w+)\s*=\s*"([^"]+)"\}/gi;
+                const strings = [];
+                let match;
+
+                while ((match = stringPattern.exec(content)) !== null) {
+                    strings.push({
+                        abbrev: match[1],
+                        full: match[2]
+                    });
+                }
+
+                // Replace abbreviations with full names
+                strings.forEach(({abbrev, full}) => {
+                    const patterns = [
+                        new RegExp(`journal\\s*=\\s*${abbrev}(?=[,\\s}])`, 'g'),
+                        new RegExp(`journal\\s*=\\s*{${abbrev}}`, 'g')
+                    ];
+
+                    patterns.forEach(pattern => {
+                        content = content.replace(pattern, `journal = {${full}}`);
+                    });
+                });
+
+                // Remove @string definitions
+                content = content.replace(/@string\s*\{[^}]+\}\s*\n?/gi, '');
+
+                // Clean up multiple blank lines
+                content = content.replace(/\n\s*\n+/g, '\n\n');
+
+                return content;
+            }
+
+            parseBibEntries(bibContent) {
+                const entries = {};
+
+                // Regex to match BibTeX entries
+                const entryPattern = /@(\w+)\s*\{\s*([^,]+)\s*,([^@]*?)(?=\n\s*@|\n*$)/gis;
+                let match;
+
+                while ((match = entryPattern.exec(bibContent)) !== null) {
+                    const type = match[1].toLowerCase();
+                    const key = match[2].trim();
+                    const content = match[0];
+
+                    entries[key] = {
+                        type: type,
+                        content: content
+                    };
+                }
+
+                return entries;
+            }
+
+            findCrossrefDependencies(entries, selectedKeys) {
+                if (!document.getElementById('includeCrossref').checked) {
+                    return selectedKeys;
+                }
+
+                const updatedKeys = new Set(selectedKeys);
+
+                selectedKeys.forEach(key => {
+                    if (entries[key]) {
+                        const content = entries[key].content;
+                        const crossrefMatch = /crossref\s*=\s*\{([^}]+)\}/i.exec(content);
+
+                        if (crossrefMatch) {
+                            const crossrefKey = crossrefMatch[1].trim();
+                            if (entries[crossrefKey]) {
+                                updatedKeys.add(crossrefKey);
+                            }
+                        }
+                    }
+                });
+
+                return updatedKeys;
+            }
+
+            processFiles() {
+                try {
+                    const button = document.getElementById('processButton');
+                    button.disabled = true;
+                    button.classList.add('processing');
+                    button.innerHTML = '<span class="spinner"></span> Processing...';
+
+                    // Hide previous results/errors
+                    document.getElementById('resultsSection').style.display = 'none';
+                    document.getElementById('errorMessage').style.display = 'none';
+
+                    // Expand journal abbreviations
+                    let processedBib = this.expandJournalAbbreviations(this.bibContent);
+
+                    // Parse BibTeX entries
+                    const allEntries = this.parseBibEntries(processedBib);
+
+                    // Extract citations from article
+                    const citations = this.extractCitations(this.articleContent);
+
+                    // Filter entries
+                    const articlesOnly = document.getElementById('articlesOnly').checked;
+                    let selectedKeys = new Set();
+                    const missing = [];
+
+                    citations.forEach(key => {
+                        if (allEntries[key]) {
+                            if (!articlesOnly || allEntries[key].type === 'article') {
+                                selectedKeys.add(key);
+                            }
+                        } else {
+                            missing.push(key);
+                        }
+                    });
+
+                    // Add crossref dependencies
+                    selectedKeys = this.findCrossrefDependencies(allEntries, selectedKeys);
+
+                    // Build output
+                    const outputEntries = [];
+                    selectedKeys.forEach(key => {
+                        if (allEntries[key]) {
+                            outputEntries.push(allEntries[key].content);
+                        }
+                    });
+
+                    this.outputContent = outputEntries.join('\n\n');
+
+                    // Update UI
+                    document.getElementById('totalCitations').textContent = citations.size;
+                    document.getElementById('extractedEntries').textContent = selectedKeys.size;
+                    document.getElementById('missingEntries').textContent = missing.length;
+
+                    if (missing.length > 0) {
+                        document.getElementById('missingRefs').style.display = 'block';
+                        const list = document.getElementById('missingList');
+                        list.innerHTML = missing.map(ref => `<li>${ref}</li>`).join('');
+                    } else {
+                        document.getElementById('missingRefs').style.display = 'none';
+                    }
+
+                    document.getElementById('resultsSection').style.display = 'block';
+
+                } catch (error) {
+                    document.getElementById('errorMessage').style.display = 'block';
+                    document.getElementById('errorMessage').textContent = `Error: ${error.message}`;
+                } finally {
+                    const button = document.getElementById('processButton');
+                    button.disabled = false;
+                    button.classList.remove('processing');
+                    button.innerHTML = 'Process Files';
+                    this.checkReady();
+                }
+            }
+
+            downloadOutput() {
+                if (!this.outputContent) return;
+
+                const blob = new Blob([this.outputContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'extracted_references.bib';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }
+
+            togglePreview() {
+                const previewArea = document.getElementById('previewArea');
+                const previewButton = document.getElementById('previewButton');
+
+                if (previewArea.style.display === 'none') {
+                    previewArea.textContent = this.outputContent || 'No content to preview';
+                    previewArea.style.display = 'block';
+                    previewButton.innerHTML = '🙈 Hide Preview';
+                } else {
+                    previewArea.style.display = 'none';
+                    previewButton.innerHTML = '👁️ Preview Output';
+                }
+            }
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            new BibTeXExtractor();
+        });
+    </script>
+</body>
+</html>
