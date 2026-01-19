@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Pa Wine Festival 2026 - Tasting Highlights</title>
+    <style>
+        :root {
+            --wine-red: #722F37;
+            --wine-gold: #C9A227;
+            --cream: #FDF8F0;
+            --dark-text: #2C2C2C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, var(--cream) 0%, #f5ebe0 100%);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--wine-red) 0%, #4a1c21 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--wine-gold), transparent);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--wine-red);
+            font-size: 1.8rem;
+            margin: 2rem 0 1.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--wine-gold);
+            margin: 0.5rem auto 0;
+        }
+
+        .winery-rankings {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .winery-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .winery-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .rank {
+            background: var(--wine-red);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .rank.gold {
+            background: linear-gradient(135deg, var(--wine-gold) 0%, #a88420 100%);
+        }
+
+        .rank.silver {
+            background: linear-gradient(135deg, #A8A8A8 0%, #808080 100%);
+        }
+
+        .rank.bronze {
+            background: linear-gradient(135deg, #CD7F32 0%, #a56428 100%);
+        }
+
+        .winery-info {
+            flex-grow: 1;
+        }
+
+        .winery-name {
+            font-size: 1.3rem;
+            color: var(--wine-red);
+            margin-bottom: 0.3rem;
+        }
+
+        .winery-stats {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .score-badge {
+            background: var(--cream);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            color: var(--wine-red);
+        }
+
+        .top-wines {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .wine-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--wine-gold);
+        }
+
+        .wine-card.exceptional {
+            border-left-color: var(--wine-gold);
+            background: linear-gradient(135deg, white 0%, #fffbf0 100%);
+        }
+
+        .wine-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .wine-name {
+            font-size: 1.2rem;
+            color: var(--wine-red);
+        }
+
+        .wine-winery {
+            color: #666;
+            font-style: italic;
+        }
+
+        .wine-score {
+            background: var(--wine-red);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        .wine-score.top {
+            background: linear-gradient(135deg, var(--wine-gold) 0%, #a88420 100%);
+        }
+
+        .wine-notes {
+            color: #555;
+            margin: 0.8rem 0;
+            font-style: italic;
+        }
+
+        .wine-link {
+            display: inline-block;
+            color: var(--wine-red);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .wine-link:hover {
+            color: var(--wine-gold);
+        }
+
+        .wine-link::before {
+            content: '\2192 ';
+        }
+
+        .all-wines-section {
+            margin-top: 3rem;
+        }
+
+        .wines-table {
+            width: 100%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-collapse: collapse;
+        }
+
+        .wines-table th {
+            background: var(--wine-red);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .wines-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .wines-table tr:hover {
+            background: #fdf8f0;
+        }
+
+        .wines-table a {
+            color: var(--wine-red);
+            text-decoration: none;
+        }
+
+        .wines-table a:hover {
+            color: var(--wine-gold);
+        }
+
+        footer {
+            background: var(--wine-red);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--wine-gold);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .winery-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .wine-header {
+                flex-direction: column;
+            }
+
+            .wines-table {
+                font-size: 0.9rem;
+            }
+
+            .wines-table th, .wines-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bridge Pa Wine Festival 2026</h1>
+        <p class="subtitle">Celebrating Hawke's Bay's Finest Wines</p>
+    </header>
+
+    <div class="container">
+        <p class="intro">
+            The Bridge Pa Triangle continues to produce exceptional wines that showcase the unique terroir of Hawke's Bay.
+            We had the pleasure of tasting a wonderful selection from the region's talented winemakers.
+            Here are our highlights from this year's festival.
+        </p>
+
+        <h2 class="section-title">Outstanding Wineries</h2>
+
+        <div class="winery-rankings">
+            <div class="winery-card">
+                <div class="rank gold">1</div>
+                <div class="winery-info">
+                    <div class="winery-name">Red Metal Vineyard</div>
+                    <div class="winery-stats">4 wines tasted - Consistently impressive across the range</div>
+                </div>
+                <div class="score-badge">Avg: 8.75/10</div>
+            </div>
+
+            <div class="winery-card">
+                <div class="rank silver">2</div>
+                <div class="winery-info">
+                    <div class="winery-name">Abbey Estate</div>
+                    <div class="winery-stats">4 wines tasted - Exceptional dessert wine and Syrah</div>
+                </div>
+                <div class="score-badge">Avg: 8.5/10</div>
+            </div>
+
+            <div class="winery-card">
+                <div class="rank bronze">3</div>
+                <div class="winery-info">
+                    <div class="winery-name">Oak Estate</div>
+                    <div class="winery-stats">3 wines tasted - Excellent sparkling wines</div>
+                </div>
+                <div class="score-badge">Avg: 8.33/10</div>
+            </div>
+
+            <div class="winery-card">
+                <div class="rank">4</div>
+                <div class="winery-info">
+                    <div class="winery-name">Radburnd Cellars</div>
+                    <div class="winery-stats">Fine Cabernet showcasing regional character</div>
+                </div>
+                <div class="score-badge">Avg: 8/10</div>
+            </div>
+
+            <div class="winery-card">
+                <div class="rank">5</div>
+                <div class="winery-info">
+                    <div class="winery-name">Paritua Winery</div>
+                    <div class="winery-stats">4 wines tasted - Strong Cabernet and Pinot Gris</div>
+                </div>
+                <div class="score-badge">Avg: 7.5/10</div>
+            </div>
+
+            <div class="winery-card">
+                <div class="rank">6</div>
+                <div class="winery-info">
+                    <div class="winery-name">Zaria Wines</div>
+                    <div class="winery-stats">2 wines tasted - Solid red wine offerings</div>
+                </div>
+                <div class="score-badge">Avg: 7/10</div>
+            </div>
+
+            <div class="winery-card">
+                <div class="rank">7</div>
+                <div class="winery-info">
+                    <div class="winery-name">Alpha Domus</div>
+                    <div class="winery-stats">5 wines tasted - Standout Sparkling Rosé</div>
+                </div>
+                <div class="score-badge">Avg: 7/10</div>
+            </div>
+
+            <div class="winery-card">
+                <div class="rank">8</div>
+                <div class="winery-info">
+                    <div class="winery-name">Bostock Wines</div>
+                    <div class="winery-stats">3 wines tasted - Interesting variety</div>
+                </div>
+                <div class="score-badge">Avg: 6.67/10</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Top-Rated Wines</h2>
+        <p style="text-align: center; margin-bottom: 2rem; color: #666;">Wines scoring 46/50 - truly exceptional</p>
+
+        <div class="top-wines">
+            <div class="wine-card exceptional">
+                <div class="wine-header">
+                    <div>
+                        <div class="wine-name">Gabriel Late Harvest Dessert</div>
+                        <div class="wine-winery">Abbey Estate</div>
+                    </div>
+                    <div class="wine-score top">46/50</div>
+                </div>
+                <p class="wine-notes">"Excellent dessert wine; overall exceptional quality"</p>
+                <a href="https://www.abbeycellars.com/product/gabriel-late-harvest-dessert/" class="wine-link" target="_blank">View Wine</a>
+            </div>
+
+            <div class="wine-card exceptional">
+                <div class="wine-header">
+                    <div>
+                        <div class="wine-name">Eden Syrah</div>
+                        <div class="wine-winery">Abbey Estate</div>
+                    </div>
+                    <div class="wine-score top">46/50</div>
+                </div>
+                <p class="wine-notes">"Full-bodied, rich in taste"</p>
+                <a href="https://www.abbeycellars.com/product/eden-syrah-2013/" class="wine-link" target="_blank">View Wine</a>
+            </div>
+
+            <div class="wine-card exceptional">
+                <div class="wine-header">
+                    <div>
+                        <div class="wine-name">Beatrix Sparkling Rosé</div>
+                        <div class="wine-winery">Alpha Domus</div>
+                    </div>
+                    <div class="wine-score top">46/50</div>
+                </div>
+                <p class="wine-notes">A stunning sparkling rosé with beautiful presentation</p>
+                <a href="https://alphadomus.co.nz/products/beatrix-sparkling-rose" class="wine-link" target="_blank">View Wine</a>
+            </div>
+
+            <div class="wine-card exceptional">
+                <div class="wine-header">
+                    <div>
+                        <div class="wine-name">2025 Rosé</div>
+                        <div class="wine-winery">Red Metal Vineyard</div>
+                    </div>
+                    <div class="wine-score top">46/50</div>
+                </div>
+                <p class="wine-notes">Excellent appearance and well-balanced throughout</p>
+                <a href="https://redmetalvineyards.co.nz/products/2022-rose" class="wine-link" target="_blank">View Wine</a>
+            </div>
+        </div>
+
+        <div class="all-wines-section">
+            <h2 class="section-title">Complete Wine Listing</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">All wines tasted, sorted by score</p>
+
+            <table class="wines-table">
+                <thead>
+                    <tr>
+                        <th>Score</th>
+                        <th>Wine</th>
+                        <th>Winery</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>46</strong></td>
+                        <td>Gabriel Late Harvest Dessert</td>
+                        <td>Abbey Estate</td>
+                        <td><a href="https://www.abbeycellars.com/product/gabriel-late-harvest-dessert/" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>46</strong></td>
+                        <td>Eden Syrah</td>
+                        <td>Abbey Estate</td>
+                        <td><a href="https://www.abbeycellars.com/product/eden-syrah-2013/" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>46</strong></td>
+                        <td>Beatrix Sparkling Rosé</td>
+                        <td>Alpha Domus</td>
+                        <td><a href="https://alphadomus.co.nz/products/beatrix-sparkling-rose" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>46</strong></td>
+                        <td>2025 Rosé</td>
+                        <td>Red Metal Vineyard</td>
+                        <td><a href="https://redmetalvineyards.co.nz/products/2022-rose" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>45</strong></td>
+                        <td>Prosecco NV</td>
+                        <td>Abbey Estate</td>
+                        <td><a href="https://www.abbeycellars.com/product/fizzy-prosecco-nv/" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>43</strong></td>
+                        <td>Méthode Traditionelle Blanc de Blanc</td>
+                        <td>Oak Estate</td>
+                        <td><a href="https://oakestatewines.co.nz/product/oak-estate-methode-traditionelle-nv/" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>43</strong></td>
+                        <td>Cabernet (Platinum Range)</td>
+                        <td>Paritua Winery</td>
+                        <td><a href="https://www.parituawines.com/platinum-range/2112-slc97-5khhk-ex4mr" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>43</strong></td>
+                        <td>Merlot Cabernet Franc</td>
+                        <td>Red Metal Vineyard</td>
+                        <td><a href="https://redmetalvineyards.co.nz/collections/all/products/2025-merlot-cabernet-franc-1" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>42</strong></td>
+                        <td>Méthode Traditionelle Rosé</td>
+                        <td>Oak Estate</td>
+                        <td><a href="https://oakestatewines.co.nz/product/oak-estate-methode-traditionelle-nv-rose/" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>42</strong></td>
+                        <td>Spritzer Wine</td>
+                        <td>Red Metal Vineyard</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>41</strong></td>
+                        <td>Cumulus BdB Méthode Traditionelle</td>
+                        <td>Alpha Domus</td>
+                        <td><a href="https://alphadomus.co.nz/products/cumulus" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>41</strong></td>
+                        <td>Stone Paddock Pinot Gris</td>
+                        <td>Paritua Winery</td>
+                        <td><a href="https://www.parituawines.com/stone-paddock-range/sppinotgris" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>41</strong></td>
+                        <td>Cabernet</td>
+                        <td>Radburnd Cellars</td>
+                        <td><a href="https://radburndcellars.co.nz/collections/our-wine" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>40</strong></td>
+                        <td>Syrah</td>
+                        <td>Bostock Wines</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>39</strong></td>
+                        <td>Stone Paddock Cabernet Franc</td>
+                        <td>Paritua Winery</td>
+                        <td><a href="https://www.parituawines.com/stone-paddock-range/stone-paddock-cabernet-franc" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>39</strong></td>
+                        <td>2023 Syrah</td>
+                        <td>Red Metal Vineyard</td>
+                        <td><a href="https://redmetalvineyards.co.nz/products/2023-syrah" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>38.5</strong></td>
+                        <td>Cabernet Sauvignon</td>
+                        <td>Zaria Wines</td>
+                        <td><a href="https://www.boutiqueconnection.co.nz/shop-nz-boutique-wines/p/element-wines-cabernet-sauvignon-hawkes-bay-2020" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>36</strong></td>
+                        <td>Merlot</td>
+                        <td>Oak Estate</td>
+                        <td><a href="https://oakestatewines.co.nz/product/oak-estate-merlot-2019/" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>36</strong></td>
+                        <td>Merlot</td>
+                        <td>Zaria Wines</td>
+                        <td><a href="https://www.boutiqueconnection.co.nz/shop-nz-boutique-wines/p/element-wines-merlot-cabernet-hawkes-bay-2019" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>36</strong></td>
+                        <td>Coffee Wine</td>
+                        <td>Bostock Wines</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>34</strong></td>
+                        <td>The Batten Chardonnay</td>
+                        <td>Alpha Domus</td>
+                        <td><a href="https://alphadomus.co.nz/products/the-batten-chardonnay-2024" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>34</strong></td>
+                        <td>The Skybolt Chardonnay</td>
+                        <td>Alpha Domus</td>
+                        <td><a href="https://alphadomus.co.nz/products/the-skybolt-2023" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>32</strong></td>
+                        <td>Syrah</td>
+                        <td>Bostock Wines</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30</strong></td>
+                        <td>Stone Paddock Syrah</td>
+                        <td>Paritua Winery</td>
+                        <td><a href="https://www.parituawines.com/stone-paddock-range/stone-paddock-syrah" target="_blank">View</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>29</strong></td>
+                        <td>Eden Syrah (mid-range)</td>
+                        <td>Abbey Estate</td>
+                        <td><a href="https://www.abbeycellars.com/product/eden-syrah-2013/" target="_blank">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>Bridge Pa Wine Festival 2026</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">
+            Celebrating the exceptional wines of the <a href="https://www.bridgepa.com/" target="_blank">Bridge Pa Triangle</a>, Hawke's Bay
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+            Scores reflect personal tasting notes and preferences. All wines showcased demonstrate the quality and diversity of the region.
+        </p>
+    </footer>
+</body>
+</html>
