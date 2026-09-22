@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AI for Researchers poll</title>
+<style>
+  /* Same tokens as presentation/styles.css */
+  :root {
+    --ink: #2b2b33;
+    --muted: #6f6f7b;
+    --faint: #b9b9c2;
+    --paper: #fcfcfa;
+    --accent: #2a78d6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", "Gill Sans", "Gill Sans MT", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.4;
+  }
+  main { max-width: 560px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.4rem; color: var(--muted); margin: 0 0 0.2em; }
+  .intro { color: var(--muted); margin: 0 0 1.6em; font-size: 0.95rem; }
+  fieldset { border: 0; padding: 0; margin: 0 0 1.8em; }
+  legend { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.7em; padding: 0; }
+  .options { display: grid; gap: 10px; }
+  .options label { display: block; cursor: pointer; }
+  .options input { position: absolute; opacity: 0; pointer-events: none; }
+  .options span {
+    display: block;
+    padding: 0.8em 1em;
+    border: 2px solid var(--faint);
+    border-radius: 22px;
+    color: var(--muted);
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+  .options input:checked + span { border-color: var(--ink); color: var(--ink); background: #f0f0ec; }
+  .options input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+  button {
+    width: 100%;
+    padding: 0.9em;
+    border: 0;
+    border-radius: 22px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+  }
+  button:disabled { background: var(--faint); cursor: default; }
+  .note { color: var(--muted); font-size: 0.85rem; margin-top: 1em; text-align: center; }
+  .done { text-align: center; padding-top: 3em; }
+  .done p { color: var(--muted); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <section id="poll">
+    <h1>Three quick questions</h1>
+    <p class="intro">AI for Researchers, WSBG. Anonymous: we store only your answers and the time.</p>
+    <form id="form"></form>
+    <p class="note" id="status"></p>
+  </section>
+  <section id="thanks" class="done" hidden>
+    <h1>Thank you</h1>
+    <p>Your answers are in. Look up at the screen.</p>
+  </section>
+</main>
+
+<script>
+/* ---- Configuration --------------------------------------------------------
+   PREFILL_URL: the Google Form's "Get pre-filled link" URL (see
+   presentation/poll_setup.md). The form ID and the three entry IDs are read
+   from it, in question order.
+   The question and option texts must match POLL in presentation/poll-live.html. */
+const PREFILL_URL = "PASTE_PREFILLED_LINK_HERE";
+
+const POLL = [
+  { q: "How often do you use Claude Code, Codex or Cursor?",
+    options: ["Never", "Tried it", "Regularly", "Daily", "24/7"] },
+  { q: "What is holding you back?",
+    options: ["Don't know where to start", "Trust issues", "Data confidentiality", "My coauthors", "Nothing, actually"] },
+  { q: "How much of your time on your latest project went into munging data?",
+    options: ["Under 10%", "10–25%", "25–50%", "50–75%", "75–100%"] }
+];
+
+/* ---- No changes needed below ---------------------------------------------- */
+const VOTED_KEY = "wsbg-ai-poll-voted";
+
+function parsePrefill(url) {
+  const m = url.match(/\/forms\/d\/e\/([A-Za-z0-9_-]+)\//);
+  if (!m) return null;
+  const entries = [...new URL(url).searchParams.keys()].filter(k => k.startsWith("entry."));
+  if (entries.length < POLL.length) return null;
+  return { action: `https://docs.google.com/forms/d/e/${m[1]}/formResponse`, entries };
+}
+
+const form = document.getElementById("form");
+const status = document.getElementById("status");
+
+POLL.forEach((item, i) => {
+  const fs = document.createElement("fieldset");
+  const lg = document.createElement("legend");
+  lg.textContent = `${i + 1}. ${item.q}`;
+  fs.appendChild(lg);
+  const opts = document.createElement("div");
+  opts.className = "options";
+  item.options.forEach(opt => {
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = `q${i}`;
+    input.value = opt;
+    const span = document.createElement("span");
+    span.textContent = opt;
+    label.append(input, span);
+    opts.appendChild(label);
+  });
+  fs.appendChild(opts);
+  form.appendChild(fs);
+});
+
+const submit = document.createElement("button");
+submit.type = "submit";
+submit.textContent = "Send";
+submit.disabled = true;
+form.appendChild(submit);
+
+form.addEventListener("change", () => {
+  submit.disabled = !POLL.some((_, i) => form.querySelector(`input[name="q${i}"]:checked`));
+});
+
+function showThanks() {
+  document.getElementById("poll").hidden = true;
+  document.getElementById("thanks").hidden = false;
+}
+
+// One vote per phone (soft check). Add ?again to the address to vote again when testing.
+try {
+  if (location.search.includes("again")) localStorage.removeItem(VOTED_KEY);
+  else if (localStorage.getItem(VOTED_KEY)) showThanks();
+} catch (e) {}
+
+const target = parsePrefill(PREFILL_URL);
+if (!target) status.textContent = "The poll is not open yet.";
+
+form.addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  if (!target) { status.textContent = "The poll is not open yet."; return; }
+  const body = new URLSearchParams();
+  POLL.forEach((_, i) => {
+    const picked = form.querySelector(`input[name="q${i}"]:checked`);
+    if (picked) body.append(target.entries[i], picked.value);
+  });
+  submit.disabled = true;
+  submit.textContent = "Sending…";
+  try {
+    // Google Forms sends no CORS headers, so the response is opaque; a network
+    // failure still throws, which is what we check for.
+    await fetch(target.action, { method: "POST", mode: "no-cors", body });
+    try { localStorage.setItem(VOTED_KEY, "1"); } catch (e) {}
+    showThanks();
+  } catch (e) {
+    submit.disabled = false;
+    submit.textContent = "Send";
+    status.textContent = "That did not go through. Check your connection and try again.";
+  }
+});
+</script>
+</body>
+</html>
