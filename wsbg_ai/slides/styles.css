@@ -1,0 +1,166 @@
+/* AI for Researchers: styling for presentation.qmd
+   Design notes (after Kieran Healy): plain background that matches the
+   figures, one typeface, muted greys, a single accent colour, no ornament. */
+
+:root {
+  --ink: #2b2b33;
+  --muted: #6f6f7b;
+  --faint: #b9b9c2;
+  --paper: #fcfcfa;      /* same off-white as the PNGs in figures/ */
+  --accent: #2a78d6;     /* same blue as the survey figures */
+}
+
+.reveal {
+  font-family: "Inter", "Gill Sans", "Gill Sans MT", "Gillius ADF", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+}
+
+.reveal .slides section { text-align: left; }
+.reveal-viewport { background-color: var(--paper); }
+
+/* Headings: sentence case, quiet grey, like the photographed slides */
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: inherit;
+  text-transform: none;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.reveal h2 { font-size: 1.35em; margin-bottom: 0.25em; }
+
+.reveal .subtitle-line {
+  font-size: 0.95em;
+  color: var(--muted);
+  margin: 0 0 1.4em 0;
+}
+
+/* Title slide */
+.reveal #title-slide, .reveal #title-slide * { text-align: left; }
+.reveal .title-slide h1 { font-size: 2.4em; color: var(--ink); }
+.reveal .title-slide .subtitle { font-size: 1.2em; color: var(--muted); }
+.reveal .title-slide .author,
+.reveal .title-slide .institute { color: var(--ink); font-size: 0.9em; }
+.reveal .title-slide .date { color: var(--muted); font-size: 0.75em; }
+
+/* Lists */
+.reveal ul, .reveal ol { margin-left: 0.8em; }
+.reveal li { margin: 0.45em 0; }
+.reveal li::marker { color: var(--faint); }
+.reveal .time { color: var(--accent); font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* ---- Buttons ("pills") -------------------------------------------------
+   Greyed out at first; each click turns one of them on.
+   Use as:  [Task]{.pill .fragment .custom .core}
+   .core marks the ones to emphasise ("especially the first three").      */
+.reveal .pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px 26px;
+  margin-top: 0.4em;
+  margin-bottom: 1.2em;
+}
+.reveal .pills.four { grid-template-columns: repeat(4, 1fr); }
+.reveal .pills.five { grid-template-columns: repeat(5, 1fr); }
+.reveal .pills.five .pill { font-size: 0.72em; }
+.reveal .pills > p { display: contents; }   /* let spans sit in the grid */
+
+.reveal .slides section .pill {
+  display: block;
+  text-align: center;
+  padding: 0.7em 0.4em;
+  border: 2px solid var(--faint);
+  border-radius: 22px;
+  color: var(--faint);
+  font-weight: 600;
+  font-size: 0.85em;
+  background: transparent;
+  transition: all 0.35s ease;
+}
+/* Neutralise reveal's default hide-until-shown; we grey out instead */
+.reveal .slides section .pill.fragment {
+  opacity: 1;
+  visibility: inherit;
+}
+.reveal .slides section .pill.fragment.visible {
+  border-color: #8a8a96;
+  color: var(--muted);
+}
+.reveal .slides section .pill.core.fragment.visible {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.reveal .slides section .pill small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.6em;
+  margin-top: 0.2em;
+}
+
+/* ---- Instruction box (text slide) -------------------------------------- */
+.reveal .instruction-box {
+  margin-top: 1.2em;
+  padding: 0.9em 1.2em;
+  border: 1px solid var(--faint);
+  border-radius: 14px;
+  background: #f4f4f1;
+  font-size: 0.7em;
+  line-height: 1.55;
+}
+.reveal .instruction-box .label {
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.4em;
+}
+
+/* ---- Figures ------------------------------------------------------------ */
+.reveal img { border: none; box-shadow: none; }
+.reveal .source {
+  font-size: 0.4em;
+  color: var(--muted);
+  margin-top: 0.8em;
+}
+.reveal .takeaways { font-size: 0.85em; }
+
+/* ---- Quote -------------------------------------------------------------- */
+.reveal blockquote {
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 1em;
+  border-left: 4px solid var(--accent);
+  background: none;
+  box-shadow: none;
+  font-style: normal;
+  font-size: 1.05em;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.reveal .attribution { color: var(--muted); font-size: 0.6em; margin-top: 1.2em; padding-left: 1.7em; }
+
+/* Title slide: Quarto centres the author block with flexbox */
+.reveal #title-slide .quarto-title-authors { justify-content: flex-start; }
+.reveal #title-slide .quarto-title-author { padding-left: 0; }
+
+/* ---- Live poll (see poll-live.html and poll_setup.md) ------------------- */
+.reveal .poll-qr img { width: 380px; margin: 0; }
+.reveal .poll-url { font-size: 1.1em; font-weight: 700; color: var(--accent); }
+.reveal .poll-count { color: var(--muted); font-size: 0.75em; font-variant-numeric: tabular-nums; }
+
+.reveal .poll-bars { margin-top: 1em; }
+.reveal .poll-row {
+  display: grid;
+  grid-template-columns: 34% 1fr 5.5em;
+  align-items: center;
+  gap: 0 18px;
+  margin: 0.45em 0;
+  font-size: 0.8em;
+}
+.reveal .poll-label { text-align: right; color: var(--ink); }
+.reveal .poll-track { height: 1.3em; }
+.reveal .poll-fill {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.8s ease;
+}
+.reveal .poll-value { color: var(--muted); font-variant-numeric: tabular-nums; white-space: pre; }
