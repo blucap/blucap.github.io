@@ -1,18 +1,167 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Git</title><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://blucap.github.io/"><link rel="alternate" type="application/atom+xml" href="https://blucap.github.io/feed.xml"><link rel="alternate" type="application/json" href="https://blucap.github.io/feed.json"><meta property="og:title" content="My Git"><meta property="og:site_name" content="My Git"><meta property="og:description" content=""><meta property="og:url" content="https://blucap.github.io/"><meta property="og:type" content="website"><style>:root{--body-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--heading-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--logo-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--menu-font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}</style><link rel="stylesheet" href="https://blucap.github.io/assets/css/style.css?v=f42b8c6ab6f96989db437f30c08a5802"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"My Git","url":"https://blucap.github.io/"}</script></head><body><div class="site-container"><header class="top" id="js-header"><a class="logo" href="https://blucap.github.io/">My Git</a></header><main><div class="hero"><header class="hero__content"><div class="wrapper"><h1>Welcome to my blog!</h1><div class="post__meta post__meta--author"><a href="https://blucap.github.io/authors/martien/" class="feed__author invert">Martien</a></div></div></header></div><div class="feed"><article class="feed__item"><header class="wrapper"><div class="feed__meta"><a href="https://blucap.github.io/authors/martien/" class="feed__author invert">Martien</a> <time datetime="2021-09-07T09:08" class="feed__date">September 7, 2021</time></div><h2><a href="https://blucap.github.io/first-post.html" class="invert">First Post on Github</a></h2></header><div class="wrapper"><p>Text here. See if it works.</p><a href="https://blucap.github.io/first-post.html" class="readmore feed__readmore invert">Continue reading...</a></div></article></div></main><footer class="footer"><div class="footer__copyright"><p>Powered by <a href="https://getpublii.com" target="_blank" rel="nofollow noopener">Publii</a></p></div><button class="footer__bttop js-footer__bttop" aria-label="Back to top"><svg><title>Back to top</title><use xlink:href="https://blucap.github.io/assets/svg/svg-map.svg#toparrow"/></svg></button></footer></div><script>window.publiiThemeMenuConfig = {    
-        mobileMenuMode: 'sidebar',
-        animationSpeed: 300,
-        submenuWidth: 'auto',
-        doubleClickTime: 500,
-        mobileMenuExpandableSubmenus: true, 
-        relatedContainerForOverlayMenuSelector: '.top',
-   };</script><script defer="defer" src="https://blucap.github.io/assets/js/scripts.min.js?v=f4c4d35432d0e17d212f2fae4e0f8247"></script><script>var images = document.querySelectorAll('img[loading]');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Martien Lubberink</title>
+<meta name="description" content="Martien Lubberink — blog, code, data and academic profile.">
+<link rel="canonical" href="https://blucap.github.io/">
+<meta property="og:title" content="Martien Lubberink">
+<meta property="og:description" content="Blog, code, data and academic profile.">
+<meta property="og:url" content="https://blucap.github.io/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f6f3;
+    --card: #ffffff;
+    --text: #1d1d1f;
+    --muted: #6b6b70;
+    --border: #e4e2dc;
+    --accent: #1f4e79;
+    --accent-soft: #e8eef5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141517;
+      --card: #1c1d20;
+      --text: #ececee;
+      --muted: #9a9aa2;
+      --border: #2c2d31;
+      --accent: #8db8e3;
+      --accent-soft: #22303d;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 12vh 20px 48px;
+  }
+  header { margin-bottom: 40px; }
+  h1 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  .tagline { color: var(--muted); margin: 0; font-size: 1.05rem; }
+  ul.links { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  ul.links a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .15s, transform .15s, box-shadow .15s;
+  }
+  ul.links a:hover, ul.links a:focus-visible {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0,0,0,.06);
+    outline: none;
+  }
+  .icon {
+    flex: none;
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: grid; place-items: center;
+  }
+  .icon svg { width: 20px; height: 20px; }
+  .text { flex: 1; min-width: 0; }
+  .title { display: block; font-weight: 600; }
+  .desc { display: block; color: var(--muted); font-size: .92rem; }
+  .arrow { flex: none; color: var(--muted); transition: color .15s, transform .15s; }
+  ul.links a:hover .arrow { color: var(--accent); transform: translateX(2px); }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .85rem;
+    padding: 24px 20px 32px;
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Martien Lubberink</h1>
+    <p class="tagline">Banking, finance &amp; regulation &middot; Victoria University of Wellington</p>
+  </header>
 
-        for (var i = 0; i < images.length; i++) {
-            if (images[i].complete) {
-                images[i].classList.add('is-loaded');
-            } else {
-                images[i].addEventListener('load', function () {
-                    this.classList.add('is-loaded');
-                }, false);
-            }
-        }</script></body></html>
+  <ul class="links">
+    <li>
+      <a href="https://www.capitalissues.co/">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        </span>
+        <span class="text">
+          <span class="title">Capital Issues</span>
+          <span class="desc">My blog &mdash; capitalissues.co</span>
+        </span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/blucap">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+        </span>
+        <span class="text">
+          <span class="title">GitHub</span>
+          <span class="desc">Code and projects &mdash; github.com/blucap</span>
+        </span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://blucap.github.io/soaringfin/#/title-slide">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13c4-1 7-1 10 1s6 2 10 1"/><path d="M12 14l-2 5"/><path d="M12 14l3-9"/></svg>
+        </span>
+        <span class="text">
+          <span class="title">Soaring Data</span>
+          <span class="desc">Flying statistics from the gliding club</span>
+        </span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://people.wgtn.ac.nz/martien.lubberink">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+        </span>
+        <span class="text">
+          <span class="title">Staff Page</span>
+          <span class="desc">Victoria University of Wellington profile</span>
+        </span>
+        <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+  </ul>
+</main>
+<footer>&copy; <span id="y">2026</span> Martien Lubberink</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
